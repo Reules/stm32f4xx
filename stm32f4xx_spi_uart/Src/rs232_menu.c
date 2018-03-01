@@ -46,9 +46,11 @@ static struct rs232_menu dacMenu = {"DAC value setting",
 };
 
 static struct rs232_menu adf4159Menu = {"ADF4159 configuration",
-	3,
+	5,
 	{"PLL configuration",
 	 "Ramp Set",
+	 "Tx power Set 1",
+	 "Tx power Set 2",
 	 "back"
 	}
 };
@@ -72,7 +74,8 @@ static void adf4159Spi1PllConfig(void);
 static void adf4159RampSet(void);
 
 static void bgt24Init(void);
-
+static void txpowerSet1(void);
+static void txpowerSet2(void);
 /*the tranmission functions*/
 static void Spi3DacTran(void);
 static void Spi1Adf4159Tran(const uint16_t *data);
@@ -209,10 +212,16 @@ static void adf4159MenuExcution(const struct rs232_menu *menu) {
 				adf4159RampSet();
 				break;
 			case 3:
+				txpowerSet1();
+				break;
+			case 4:
+				txpowerSet2();
+				break;
+			case 5:
 				mainMenuExcution(&mainMenu);
 			}
 		} while (optionSelect > 0 && optionSelect <= menu->menuLength);
-	} while (optionSelect < 1 || optionSelect > 3);
+	} while (optionSelect < 1 || optionSelect > 5);
 }
 
 
@@ -264,7 +273,7 @@ static void dacDivision(void){
 static void adf4159Spi1PllConfig(void){
 
 	MX_SPI1_ADF4159_Init();
-	adf4159Spi1Tx(5, 3073829280); //only for test
+//	adf4159Spi1Tx(5, 3073829280); //only for test
 	adf4159Spi1Tx(PLL_REG_R7_DELAY, 1L << R7_SHIFT_TX_DATA_TRIGGER); 					//TX_DATA_TRIGGER enabled
 	adf4159Spi1Tx(PLL_REG_R6_STEP, 0L << R6_SHIFT_STEP_SEL);
 	adf4159Spi1Tx(PLL_REG_R6_STEP, 1L << R6_SHIFT_STEP_SEL); 							// second step register is not used
@@ -289,6 +298,7 @@ static void adf4159Spi1PllConfig(void){
 	adf4159Spi1Tx(PLL_REG_R0_FRAC_INT, (23L << R0_SHIFT_INTEGER_VALUE)				//Int value is 375 18
 									| (1792L << R0_SHIFT_MSB_FRACTIONAL_VALUE));		//Fraction MSB is 1792 3072 1788
 
+
 	bufferLen = sprintf(uart1BufferTx, "PLL was configured\n\r");
 	HAL_UART_Transmit(&huart1, (uint8_t *)uart1BufferTx, bufferLen, 1000);
 
@@ -296,6 +306,8 @@ static void adf4159Spi1PllConfig(void){
 
 static void adf4159RampSet(void){
 	MX_SPI1_ADF4159_Init();
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
 	adf4159Spi1Tx(PLL_REG_R7_DELAY, 1L << R7_SHIFT_TX_DATA_TRIGGER); 					//TX_DATA_TRIGGER enabled
 	adf4159Spi1Tx(PLL_REG_R6_STEP, 150L << R6_SHIFT_STEP_WORD);//150
 	adf4159Spi1Tx(PLL_REG_R6_STEP, 1L << R6_SHIFT_STEP_SEL); 							// second step register is not used
@@ -335,6 +347,22 @@ static void adf4159RampSet(void){
 static void bgt24Init(void){
 	MX_SPI1_BGT24_Init();
 	Spi1Bgt24Tran();
+}
+
+static void txpowerSet1(void){
+	static uint16_t spi1DataTxpower = 2119;
+	MX_SPI1_BGT24_Init();
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET);
+	HAL_SPI_Transmit(&hspi1, (uint8_t*) &spi1DataTxpower, 1, 5000);
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET);
+}
+
+static void txpowerSet2(void){
+	static uint16_t spi1DataTxpower = 2112;
+	MX_SPI1_BGT24_Init();
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET);
+	HAL_SPI_Transmit(&hspi1, (uint8_t*) &spi1DataTxpower, 1, 5000);
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET);
 }
 
 static void adf4159Spi1Tx(uint32_t adfAddress, uint32_t data){
