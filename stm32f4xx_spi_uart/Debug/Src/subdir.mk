@@ -4,6 +4,9 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/ad5641.c \
+../Src/adf4159.c \
+../Src/bgt24mtr11.c \
 ../Src/main.c \
 ../Src/rs232_menu.c \
 ../Src/stm32f4xx_hal_msp.c \
@@ -11,6 +14,9 @@ C_SRCS += \
 ../Src/system_stm32f4xx.c 
 
 OBJS += \
+./Src/ad5641.o \
+./Src/adf4159.o \
+./Src/bgt24mtr11.o \
 ./Src/main.o \
 ./Src/rs232_menu.o \
 ./Src/stm32f4xx_hal_msp.o \
@@ -18,6 +24,9 @@ OBJS += \
 ./Src/system_stm32f4xx.o 
 
 C_DEPS += \
+./Src/ad5641.d \
+./Src/adf4159.d \
+./Src/bgt24mtr11.d \
 ./Src/main.d \
 ./Src/rs232_menu.d \
 ./Src/stm32f4xx_hal_msp.d \
