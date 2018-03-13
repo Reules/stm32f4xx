@@ -11,6 +11,8 @@
 #include "adf4159.h"
 #include "bgt24mtr11.h"
 
+extern UART_HandleTypeDef huart1;
+
 //interrupt variables
 static char uart1DataRx;			//receive interrupt Bit
 static uint8_t uart1TxCplt;			//Interrupt complete Bit
@@ -19,11 +21,8 @@ static uint8_t uart1TxCplt;			//Interrupt complete Bit
 char uart1BufferTx[100];			//the Buffer of printf
 uint8_t bufferLen;
 
-extern UART_HandleTypeDef huart1;
-
 static uint8_t optionSelect;
-static uint16_t spi3DataTx = DAC_START;
-
+extern uint16_t spi3DataTx;
 
 struct rs232_menu{
 	char menuName[50];
@@ -64,7 +63,6 @@ static void mainMenuExcution(const struct rs232_menu *menu);
 /*Submenu*/
 static void ad5641MenuExcution(const struct rs232_menu *menu);
 static void hfBoardMenuExcution(const struct rs232_menu *menu);
-
 
 //Interrupt call back function
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
