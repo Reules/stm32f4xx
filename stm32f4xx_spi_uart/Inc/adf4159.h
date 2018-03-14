@@ -28,6 +28,7 @@
 #define R3_SHIFT_N_SEL					15
 #define R3_SHIFT_SIGMA_DELTA_RESET		14
 #define R3_SHIFT_RAMP_MODE				10
+#define R3_SHIFT_FSK_MODE				8
 #define R3_SHIFT_LDP					7
 #define R3_SHIFT_PD_POL					6
 #define R2_SHIFT_CP_CURRENT_SETTING		24
@@ -52,5 +53,5 @@
 
 void adf4159Init(void);
 void adf4159RampOn(void);
-
+void adf4159Fsk(void);
 #endif

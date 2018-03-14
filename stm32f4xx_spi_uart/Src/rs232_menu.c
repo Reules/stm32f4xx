@@ -47,8 +47,9 @@ static struct rs232_menu ad5641Menu = {"DAC value setting",
 };
 
 static struct rs232_menu hfBoardMenu = {"HF Board configuration",
-	4,
+	5,
 	{"Ramp mode on",
+	 "FSK mode on",
 	 "BGT24 Power up",
 	 "BGT24 Power down",
 	 "back"
@@ -189,12 +190,15 @@ static void hfBoardMenuExcution(const struct rs232_menu *menu) {
 				adf4159RampOn();
 				break;
 			case 2:
-				bgt24PowerOn();
+				adf4159Fsk();
 				break;
 			case 3:
-				bgt24PowerDown();
+				bgt24PowerOn();
 				break;
 			case 4:
+				bgt24PowerDown();
+				break;
+			case 5:
 				mainMenuExcution(&mainMenu);
 			}
 		} while (optionSelect > 0 && optionSelect <= menu->menuLength);

@@ -1,6 +1,7 @@
 #include "adf4159.h"
 #include "stm32f4xx_hal.h"
 #include "main.h"
+#include "microsec_delay.h"
 
 extern SPI_HandleTypeDef hspi1;
 extern UART_HandleTypeDef huart1;
@@ -94,6 +95,47 @@ void adf4159RampOn(void) {
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
 
 	bufferLen = sprintf(uart1BufferTx, "Ramp Mode is on\n\r");
+	HAL_UART_Transmit(&huart1, (uint8_t *)uart1BufferTx, bufferLen, 1000);
+}
+
+void adf4159Fsk(void){
+
+	adf4159Spi1Tx(PLL_REG_R1_LSB_FRAC, 0L << R1_SHIFT_LSB_FRACTIONAL_VALUE);
+		adf4159Spi1Tx(PLL_REG_R0_FRAC_INT, (23L << R0_SHIFT_INTEGER_VALUE)
+										    	| (1792L << R0_SHIFT_MSB_FRACTIONAL_VALUE));
+
+	;
+	adf4159Spi1Tx(PLL_REG_R7_DELAY, 0L << R7_SHIFT_TX_DATA_TRIGGER); 					//TX_DATA_TRIGGER enabled
+		adf4159Spi1Tx(PLL_REG_R6_STEP, 0L << R6_SHIFT_STEP_WORD);
+		adf4159Spi1Tx(PLL_REG_R6_STEP, 1L << R6_SHIFT_STEP_SEL);
+	adf4159Spi1Tx(PLL_REG_R5_DEVIATION, (5479L << R5_SHIFT_DEVIATION_WORD)
+											|(6L << R5_SHIFT_DEVIATION_OFFSET));
+	adf4159Spi1Tx(PLL_REG_R5_DEVIATION, 1L << R5_SHIFT_DEV_SEL);
+	adf4159Spi1Tx(PLL_REG_R3_FUNCTION, (6L << R3_SHIFT_NEG_BLEED_CURRENT)				// negative bleed current 454.7 uA; but not actually enabled
+										| (1L << R3_SHIFT_RESERVED_1)						// reserved; must be 1
+										| (1L << R3_SHIFT_LOL)								// disable "loss of lock" feature; not using it makes things supposedly more robust
+										| (1L << R3_SHIFT_N_SEL)							// 1 = delay N word load by 4 cycles; makes transition between sweeps smoother
+										| (1L << R3_SHIFT_SIGMA_DELTA_RESET)				// 1 = disable sigma-delta reset on every write
+									| (1L << R3_SHIFT_FSK_MODE)
+										| (1L << R3_SHIFT_LDP)								// "lock detect precision"; writing 1makes things supposedly more robust
+										);
+//	adf4159Spi1Tx(PLL_REG_R3_FUNCTION, 1L << R3_SHIFT_FSK_MODE); 				//enable FSK mode
+	adf4159Spi1Tx(PLL_REG_R2_R_DIVIDER, (7L << R2_SHIFT_CP_CURRENT_SETTING)				// CP current 2.5 mA
+										| (0L << R2_SHIFT_RDIV2)							// f= REF x [(1+D)/(Rx(1+T))] #(D=0,T=0,R=1 and REF=64MHz)
+										| (0L << R2_SHIFT_REF_DOUBLER)
+										| (1L << R2_SHIFT_R_COUNTER)
+										| (640L << R2_SHIFT_CLK1_DIV_VALUE));
+	adf4159Spi1Tx(PLL_REG_R1_LSB_FRAC, 0L << R1_SHIFT_LSB_FRACTIONAL_VALUE);
+	adf4159Spi1Tx(PLL_REG_R0_FRAC_INT, (23L << R0_SHIFT_INTEGER_VALUE)
+									    	| (1792L << R0_SHIFT_MSB_FRACTIONAL_VALUE));
+	while(1){
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+	delayUs(50);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+	delayUs(50);
+	}
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+	bufferLen = sprintf(uart1BufferTx, "FSK Mode is on\n\r");
 	HAL_UART_Transmit(&huart1, (uint8_t *)uart1BufferTx, bufferLen, 1000);
 }
 
