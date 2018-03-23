@@ -26,6 +26,8 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o: \
  C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+ C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 
 C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -79,5 +81,9 @@ C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Dr
 C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 
 C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
+
+C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
+
+C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:

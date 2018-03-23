@@ -8,30 +8,36 @@ C_SRCS += \
 ../Src/adf4159.c \
 ../Src/bgt24mtr11.c \
 ../Src/main.c \
+../Src/microsec_delay.c \
 ../Src/rs232_menu.c \
 ../Src/stm32f4xx_hal_msp.c \
 ../Src/stm32f4xx_it.c \
-../Src/system_stm32f4xx.c 
+../Src/system_stm32f4xx.c \
+../Src/uartPrint.c 
 
 OBJS += \
 ./Src/ad5641.o \
 ./Src/adf4159.o \
 ./Src/bgt24mtr11.o \
 ./Src/main.o \
+./Src/microsec_delay.o \
 ./Src/rs232_menu.o \
 ./Src/stm32f4xx_hal_msp.o \
 ./Src/stm32f4xx_it.o \
-./Src/system_stm32f4xx.o 
+./Src/system_stm32f4xx.o \
+./Src/uartPrint.o 
 
 C_DEPS += \
 ./Src/ad5641.d \
 ./Src/adf4159.d \
 ./Src/bgt24mtr11.d \
 ./Src/main.d \
+./Src/microsec_delay.d \
 ./Src/rs232_menu.d \
 ./Src/stm32f4xx_hal_msp.d \
 ./Src/stm32f4xx_it.d \
-./Src/system_stm32f4xx.d 
+./Src/system_stm32f4xx.d \
+./Src/uartPrint.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

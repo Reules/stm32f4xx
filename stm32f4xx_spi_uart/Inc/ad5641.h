@@ -5,10 +5,13 @@
 #define DAC_MAX 		16383
 #define DAC_MIN 		0
 
-void dacAddtion(void);
+void dacInit(void);
+void dacAddition(void);
 void dacSubtraction(void);
 void dacMultiplication(void);
 void dacDivision(void);
+void turnDacUp(void);
+void turnDacDown(void);
 void Spi3DacTran(void);
 
 #endif

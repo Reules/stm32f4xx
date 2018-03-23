@@ -10,25 +10,18 @@
 #include "ad5641.h"
 #include "adf4159.h"
 #include "bgt24mtr11.h"
+#include "uartPrint.h"
 
 extern UART_HandleTypeDef huart1;
 
 //interrupt variables
-static char uart1DataRx;			//receive interrupt Bit
-static uint8_t uart1TxCplt;			//Interrupt complete Bit
+extern char uart1DataRx;			//receive interrupt Bit
+extern uint8_t uart1TxCplt;			//Interrupt complete Bit
 
-//uart print variables
-char uart1BufferTx[100];			//the Buffer of printf
-uint8_t bufferLen;
-
-static uint8_t optionSelect;
 extern uint16_t spi3DataTx;
+static uint8_t optionSelect;
 
-struct rs232_menu{
-	char menuName[50];
-	int menuLength;
-	char *menuOption[10];
-};
+
 
 static struct rs232_menu mainMenu = {"Main Menu",
 	2,
@@ -65,12 +58,6 @@ static void mainMenuExcution(const struct rs232_menu *menu);
 static void ad5641MenuExcution(const struct rs232_menu *menu);
 static void hfBoardMenuExcution(const struct rs232_menu *menu);
 
-//Interrupt call back function
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	if (huart->Instance == USART1)  //current UART
-		uart1TxCplt = 1;          //transfer complete, data is ready to read
-}
-
 //the interface function to outside
 void rs232_menu(void){
 	mainMenuExcution(&mainMenu);
@@ -82,18 +69,13 @@ static void mainMenuExcution(const struct rs232_menu *menu)
 
 	do {
 		//print function through uart1, print Menu Name and options
-		bufferLen = sprintf(uart1BufferTx, "%s\n\r", menu->menuName);
-		HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen, 1000);
+		uartPrintMenu(menu);
 		for (int i = 0; i < menu->menuLength; i++) {
-			bufferLen = sprintf(uart1BufferTx, "%d: %s\n\r", i + 1,
-					menu->menuOption[i]);
-			HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen,
-					1000);
+			uartPrintMenuOption(menu,i );
 		};
 
 		//print enter
-		bufferLen = sprintf(uart1BufferTx, "\n\r");
-		HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen, 1000);
+		uartPrintEnter();
 
 		HAL_UART_Receive_IT(&huart1, (uint8_t *) &uart1DataRx, 1); 				//active the uart1 to accept interrupt
 		while (!uart1TxCplt) {
@@ -114,25 +96,18 @@ static void mainMenuExcution(const struct rs232_menu *menu)
 
 static void ad5641MenuExcution(const struct rs232_menu *menu) {
 	do {
-		//print options through uart1
-		bufferLen = sprintf(uart1BufferTx, "%s\n\r", menu->menuName);
-		HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen, 1000);
+		//print menu and menu options through uart1
+		uartPrintMenu(menu);
 
 		for (int i = 0; i < menu->menuLength; i++) {
-			bufferLen = sprintf(uart1BufferTx, "%d: %s\n\r", i + 1,
-					menu->menuOption[i]);
-			HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen,
-					1000);
+			uartPrintMenuOption(menu, i);
 		};
 
 		//print current dac value and transmit to dac
 		Spi3DacTran();
-		bufferLen = sprintf(uart1BufferTx, "current DAC value is: %d\r",
-				spi3DataTx);
-		HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen, 1000);
+		uartPrintDacValue(spi3DataTx);
 
-		bufferLen = sprintf(uart1BufferTx, "\n\r");
-		HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen, 1000);
+		uartPrintEnter();
 
 		do {
 			HAL_UART_Receive_IT(&huart1, (uint8_t *) &uart1DataRx, 1); 		//active the uart1 to accept interrupt
@@ -143,7 +118,7 @@ static void ad5641MenuExcution(const struct rs232_menu *menu) {
 
 			switch (optionSelect) {
 			case 1:
-				dacAddtion();
+				dacAddition();
 				break;
 			case 2:
 				dacSubtraction();
@@ -166,18 +141,13 @@ static void hfBoardMenuExcution(const struct rs232_menu *menu) {
 	adf4159Init();
 	do {
 		//print options through uart1
-		bufferLen = sprintf(uart1BufferTx, "%s\n\r", menu->menuName);
-		HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen, 1000);
+		uartPrintMenu(menu);
 
 		for (int i = 0; i < menu->menuLength; i++) {
-			bufferLen = sprintf(uart1BufferTx, "%d: %s\n\r", i + 1,
-					menu->menuOption[i]);
-			HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen,
-					1000);
+			uartPrintMenuOption(menu, i);
 		};
 
-		bufferLen = sprintf(uart1BufferTx, "\n\r");
-		HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen, 1000);
+		uartPrintEnter();
 
 		do {
 			HAL_UART_Receive_IT(&huart1, (uint8_t *) &uart1DataRx, 1); 	//active the uart1 to accept interrupt

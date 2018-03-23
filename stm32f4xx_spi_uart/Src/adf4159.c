@@ -2,11 +2,9 @@
 #include "stm32f4xx_hal.h"
 #include "main.h"
 #include "microsec_delay.h"
+#include "uartPrint.h"
 
 extern SPI_HandleTypeDef hspi1;
-extern UART_HandleTypeDef huart1;
-extern uint8_t bufferLen;
-extern char uart1BufferTx[100];
 
 extern void MX_SPI1_ADF4159_Init(void);
 
@@ -47,8 +45,7 @@ void adf4159Init(void){
 	adf4159Spi1Tx(PLL_REG_R0_FRAC_INT, (23L << R0_SHIFT_INTEGER_VALUE)					//Int value is 23
 								    | (1792L << R0_SHIFT_MSB_FRACTIONAL_VALUE));		//Fraction MSB is 1792
 
-	bufferLen = sprintf(uart1BufferTx, "adf4159 was initialed\n\r");
-	HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, bufferLen, 1000);
+	uartPrintString("adf4159 was initialed\n\r");
 }
 
 void adf4159RampOn(void) {
@@ -94,8 +91,7 @@ void adf4159RampOn(void) {
 	//ramp mode with TXdata trigger
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
 
-	bufferLen = sprintf(uart1BufferTx, "Ramp Mode is on\n\r");
-	HAL_UART_Transmit(&huart1, (uint8_t *)uart1BufferTx, bufferLen, 1000);
+	uartPrintString("Ramp Mode is on\n\r");
 }
 
 void adf4159Fsk(void){
@@ -128,6 +124,8 @@ void adf4159Fsk(void){
 	adf4159Spi1Tx(PLL_REG_R1_LSB_FRAC, 0L << R1_SHIFT_LSB_FRACTIONAL_VALUE);
 	adf4159Spi1Tx(PLL_REG_R0_FRAC_INT, (23L << R0_SHIFT_INTEGER_VALUE)
 									    	| (1792L << R0_SHIFT_MSB_FRACTIONAL_VALUE));
+
+	//toggling the Txdata pin
 	while(1){
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
 	delayUs(50);
@@ -135,8 +133,9 @@ void adf4159Fsk(void){
 	delayUs(50);
 	}
 //	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
-	bufferLen = sprintf(uart1BufferTx, "FSK Mode is on\n\r");
-	HAL_UART_Transmit(&huart1, (uint8_t *)uart1BufferTx, bufferLen, 1000);
+
+	uartPrintString("FSK Mode is on\n\r");
+
 }
 
 void adf4159Spi1Tx(uint32_t adfAddress, uint32_t data){
