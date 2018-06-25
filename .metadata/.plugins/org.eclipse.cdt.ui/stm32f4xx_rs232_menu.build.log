@@ -1,0 +1,101 @@
+11:08:38 **** Incremental Build of configuration Debug for project stm32f4xx_rs232_menu ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_rs232_menu\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Src/main.c:78:22: warning: array subscript has type 'char' [-Wchar-subscripts]
+             Rx_Buffer[Rx_indx++]=Rx_data[0];    //add data to Rx_Buffer
+                      ^
+../Src/main.c:86:38: warning: pointer targets in passing argument 2 of 'HAL_UART_Receive_IT' differ in signedness [-Wpointer-sign]
+         HAL_UART_Receive_IT(&huart1, Rx_data, 1);   //activate UART receive interrupt every time
+                                      ^~~~~~~
+In file included from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Inc/stm32f4xx_hal_conf.h:368:0,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
+                 from ../Src/main.c:40:
+C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:650:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:125:11: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+   sprintf(buffer,"hello\r\n");
+           ^~~~~~
+In file included from c:\ac6\systemworkbench_min\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:50,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:47,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Inc/stm32f4xx_hal_conf.h:244,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
+                 from ../Src/main.c:40:
+c:\ac6\systemworkbench_min\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'int *'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+../Src/main.c:126:7: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   len=strlen(buffer);
+       ^~~~~~
+../Src/main.c:126:7: warning: incompatible implicit declaration of built-in function 'strlen'
+../Src/main.c:126:7: note: include '<string.h>' or provide a declaration of 'strlen'
+../Src/main.c:126:14: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+   len=strlen(buffer);
+              ^~~~~~
+../Src/main.c:126:14: note: expected 'const char *' but argument is of type 'int *'
+../Src/main.c:127:30: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   HAL_UART_Transmit(&huart1, buffer, len, 1000);
+                              ^~~~~~
+In file included from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Inc/stm32f4xx_hal_conf.h:368:0,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
+                 from ../Src/main.c:40:
+C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:647:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~
+../Src/main.c:129:32: warning: pointer targets in passing argument 2 of 'HAL_UART_Receive_IT' differ in signedness [-Wpointer-sign]
+   HAL_UART_Receive_IT(&huart1, Rx_data, 1);//activate uart receive interrupt every time
+                                ^~~~~~~
+In file included from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Inc/stm32f4xx_hal_conf.h:368:0,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
+                 from ../Src/main.c:40:
+C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:650:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Src/main.c:138:14: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+      sprintf(buffer,"%s\r\n", Rx_Buffer);
+              ^~~~~~
+In file included from c:\ac6\systemworkbench_min\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:50,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:47,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Inc/stm32f4xx_hal_conf.h:244,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
+                 from ../Src/main.c:40:
+c:\ac6\systemworkbench_min\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.15.0.201708311556\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'int *'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+../Src/main.c:139:17: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+      len=strlen(buffer);
+                 ^~~~~~
+../Src/main.c:139:17: note: expected 'const char *' but argument is of type 'int *'
+../Src/main.c:140:33: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+      HAL_UART_Transmit(&huart1, buffer, len, 1000);
+                                 ^~~~~~
+In file included from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Inc/stm32f4xx_hal_conf.h:368:0,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
+                 from ../Src/main.c:40:
+C:/Users/min_bao/Documents/Workspace/stm32f4xx_rs232_menu/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:647:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_rs232_menu.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_rs232_menu.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_rs232_menu.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_rs232_menu.elf" "stm32f4xx_rs232_menu.bin"
+arm-none-eabi-size "stm32f4xx_rs232_menu.elf"
+   text	   data	    bss	    dec	    hex	filename
+   8676	    112	   2160	  10948	   2ac4	stm32f4xx_rs232_menu.elf
+ 
+
+11:08:41 Build Finished (took 3s.204ms)
+

@@ -1,0 +1,6 @@
+09:57:43 **** Incremental Build of configuration Debug for project stm32f4xx_uart ****
+make all 
+make: Nothing to be done for 'all'.
+
+09:57:43 Build Finished (took 469ms)
+

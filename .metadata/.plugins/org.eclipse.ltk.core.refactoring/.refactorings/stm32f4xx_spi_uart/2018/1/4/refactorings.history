@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;stm32f4xx_spi_uart/Inc/re232_menu.h&apos; to &apos;rs232_menu.h&apos;" description="Rename resource &apos;re232_menu.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Inc/re232_menu.h" name="rs232_menu.h" stamp="1516722415532" updateReferences="true"/>
+</session>

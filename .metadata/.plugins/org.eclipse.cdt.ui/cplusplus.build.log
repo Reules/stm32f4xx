@@ -1,0 +1,11 @@
+16:51:23 **** Incremental Build of configuration Release for project cplusplus ****
+make all 
+'Building target: cplusplus'
+'Invoking: Cross G++ Linker'
+g++  -o "cplusplus"  ./src/cplusplus.o   
+C:/Program Files (x86)/mingw-w64/i686-7.2.0-posix-dwarf-rt_v5-rev1/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.2.0/../../../../i686-w64-mingw32/bin/ld.exe: cannot open output file cplusplus.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:47: cplusplus] Error 1
+
+16:51:23 Build Finished (took 415ms)
+

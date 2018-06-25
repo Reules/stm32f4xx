@@ -1,0 +1,9 @@
+#ifndef FSK_CRC16
+#define FSK_CRC16
+
+
+#define CRC16 0x8005
+
+void fskCRC16(uint16_t data[], uint8_t size);
+
+#endif

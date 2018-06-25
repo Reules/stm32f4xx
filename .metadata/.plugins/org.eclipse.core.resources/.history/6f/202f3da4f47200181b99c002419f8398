@@ -1,0 +1,1332 @@
+#include "bitDecode.h"
+#include "stm32f4xx_hal.h"
+
+void bitDec (uint16_t data)
+{
+	switch (data)
+	{
+		case 0b1001110100 :
+			data = 0b000000000;
+			break;
+		case 0b0111010100 :
+			data = 0b000000001;
+			break;
+		case 0b1011010100 :
+			data = 0b000000010;
+			break;
+		case 0b1100011011 :
+			data = 0b000000011;
+			break;
+		case 0b1101010100 :
+			data = 0b000000100;
+			break;
+		case 0b1010011011 :
+			data = 0b000000101;
+			break;
+		case 0b0110011011 :
+			data = 0b000000110;
+			break;
+		case 0b1110001011 :
+			data = 0b000000111;
+			break;
+		case 0b1110010100 :
+			data = 0b000001000;
+			break;
+		case 0b1001011011 :
+			data = 0b000001001;
+			break;
+		case 0b0101011011 :
+			data = 0b000001010;
+			break;
+		case 0b1101001011 :
+			data = 0b000001011;
+			break;
+		case 0b0011011011 :
+			data = 0b000001100;
+			break;
+		case 0b1011001011 :
+			data = 0b000001101;
+			break;
+		case 0b0111001011 :
+			data = 0b000001110;
+			break;
+		case 0b0101110100 :
+			data = 0b000001111;
+			break;
+		case 0b0110110100 :
+			data = 0b000010000;
+			break;
+		case 0b1000111011 :
+			data = 0b000010001;
+			break;
+		case 0b0100111011 :
+			data = 0b000010010;
+			break;
+		case 0b1100101011 :
+			data = 0b000010011;
+			break;
+		case 0b0010111011 :
+			data = 0b000010100;
+			break;
+		case 0b1010101011 :
+			data = 0b000010101;
+			break;
+		case 0b0110101011 :
+			data = 0b000010110;
+			break;
+		case 0b1110100100 :
+			data = 0b000010111;
+			break;
+		case 0b1100110100 :
+			data = 0b000011000;
+			break;
+		case 0b1001101011 :
+			data = 0b000011001;
+			break;
+		case 0b0101101011 :
+			data = 0b000011010;
+			break;
+		case 0b1101100100 :
+			data = 0b000011011;
+			break;
+		case 0b0011101011 :
+			data = 0b000011100;
+			break;
+		case 0b1011100100 :
+			data = 0b000011101;
+			break;
+		case 0b0111100100 :
+			data = 0b000011110;
+			break;
+		case 0b1010110100 :
+			data = 0b000011111;
+			break;
+		case 0b1001111001 :
+			data = 0b000100000;
+			break;
+		case 0b0111011001 :
+			data = 0b000100001;
+			break;
+		case 0b1011011001 :
+			data = 0b000100010;
+			break;
+		case 0b1100011001 :
+			data = 0b000100011;
+			break;
+		case 0b1101011001 :
+			data = 0b000100100;
+			break;
+		case 0b1010011001 :
+			data = 0b000100101;
+			break;
+		case 0b0110011001 :
+			data = 0b000100110;
+			break;
+		case 0b1110001001 :
+			data = 0b000100111;
+			break;
+		case 0b1110011001 :
+			data = 0b000101000;
+			break;
+		case 0b1001011001 :
+			data = 0b000101001;
+			break;
+		case 0b0101011001 :
+			data = 0b000101010;
+			break;
+		case 0b1101001001 :
+			data = 0b000101011;
+			break;
+		case 0b0011011001 :
+			data = 0b000101100;
+			break;
+		case 0b1011001001 :
+			data = 0b000101101;
+			break;
+		case 0b0111001001 :
+			data = 0b000101110;
+			break;
+		case 0b0101111001 :
+			data = 0b000101111;
+			break;
+		case 0b0110111001 :
+			data = 0b000110000;
+			break;
+		case 0b1000111001 :
+			data = 0b000110001;
+			break;
+		case 0b0100111001 :
+			data = 0b000110010;
+			break;
+		case 0b1100101001 :
+			data = 0b000110011;
+			break;
+		case 0b0010111001 :
+			data = 0b000110100;
+			break;
+		case 0b1010101001 :
+			data = 0b000110101;
+			break;
+		case 0b0110101001 :
+			data = 0b000110110;
+			break;
+		case 0b1110101001 :
+			data = 0b000110111;
+			break;
+		case 0b1100111001 :
+			data = 0b000111000;
+			break;
+		case 0b1001101001 :
+			data = 0b000111001;
+			break;
+		case 0b0101101001 :
+			data = 0b000111010;
+			break;
+		case 0b1101101001 :
+			data = 0b000111011;
+			break;
+		case 0b0011101001 :
+			data = 0b000111100;
+			break;
+		case 0b1011101001 :
+			data = 0b000111101;
+			break;
+		case 0b0111101001 :
+			data = 0b000111110;
+			break;
+		case 0b1010111001 :
+			data = 0b000111111;
+			break;
+		case 0b1001110101 :
+			data = 0b001000000;
+			break;
+		case 0b0111010101 :
+			data = 0b001000001;
+			break;
+		case 0b1011010101 :
+			data = 0b001000010;
+			break;
+		case 0b1100010101 :
+			data = 0b001000011;
+			break;
+		case 0b1101010101 :
+			data = 0b001000100;
+			break;
+		case 0b1010010101 :
+			data = 0b001000101;
+			break;
+		case 0b0110010101 :
+			data = 0b001000110;
+			break;
+		case 0b1110000101 :
+			data = 0b001000111;
+			break;
+		case 0b1110010101 :
+			data = 0b001001000;
+			break;
+		case 0b1001010101 :
+			data = 0b001001001;
+			break;
+		case 0b0101010101 :
+			data = 0b001001010;
+			break;
+		case 0b1101000101 :
+			data = 0b001001011;
+			break;
+		case 0b0011010101 :
+			data = 0b001001100;
+			break;
+		case 0b1011000101 :
+			data = 0b001001101;
+			break;
+		case 0b0111000101 :
+			data = 0b001001110;
+			break;
+		case 0b0101110101 :
+			data = 0b001001111;
+			break;
+		case 0b0110110101 :
+			data = 0b001010000;
+			break;
+		case 0b1000110101 :
+			data = 0b001010001;
+			break;
+		case 0b0100110101 :
+			data = 0b001010010;
+			break;
+		case 0b1100100101 :
+			data = 0b001010011;
+			break;
+		case 0b0010110101 :
+			data = 0b001010100;
+			break;
+		case 0b1010100101 :
+			data = 0b001010101;
+			break;
+		case 0b0110100101 :
+			data = 0b001010110;
+			break;
+		case 0b1110100101 :
+			data = 0b001010111;
+			break;
+		case 0b1100110101 :
+			data = 0b001011000;
+			break;
+		case 0b1001100101 :
+			data = 0b001011001;
+			break;
+		case 0b0101100101 :
+			data = 0b001011010;
+			break;
+		case 0b1101100101 :
+			data = 0b001011011;
+			break;
+		case 0b0011100101 :
+			data = 0b001011100;
+			break;
+		case 0b1011100101 :
+			data = 0b001011101;
+			break;
+		case 0b0111100101 :
+			data = 0b001011110;
+			break;
+		case 0b1010110101 :
+			data = 0b001011111;
+			break;
+		case 0b1001110011 :
+			data = 0b001100000;
+			break;
+		case 0b0111010011 :
+			data = 0b001100001;
+			break;
+		case 0b1011010011 :
+			data = 0b001100010;
+			break;
+		case 0b1100011100 :
+			data = 0b001100011;
+			break;
+		case 0b1101010011 :
+			data = 0b001100100;
+			break;
+		case 0b1010011100 :
+			data = 0b001100101;
+			break;
+		case 0b0110011100 :
+			data = 0b001100110;
+			break;
+		case 0b1110001100 :
+			data = 0b001100111;
+			break;
+		case 0b1110010011 :
+			data = 0b001101000;
+			break;
+		case 0b1001011100 :
+			data = 0b001101001;
+			break;
+		case 0b0101011100 :
+			data = 0b001101010;
+			break;
+		case 0b1101001100 :
+			data = 0b001101011;
+			break;
+		case 0b0011011100 :
+			data = 0b001101100;
+			break;
+		case 0b1011001100 :
+			data = 0b001101101;
+			break;
+		case 0b0111001100 :
+			data = 0b001101110;
+			break;
+		case 0b0101110011 :
+			data = 0b001101111;
+			break;
+		case 0b0110110011 :
+			data = 0b001110000;
+			break;
+		case 0b1000111100 :
+			data = 0b001110001;
+			break;
+		case 0b0100111100 :
+			data = 0b001110010;
+			break;
+		case 0b1100101100 :
+			data = 0b001110011;
+			break;
+		case 0b0010111100 :
+			data = 0b001110100;
+			break;
+		case 0b1010101100 :
+			data = 0b001110101;
+			break;
+		case 0b0110101100 :
+			data = 0b001110110;
+			break;
+		case 0b1110100011 :
+			data = 0b001110111;
+			break;
+		case 0b1100110011 :
+			data = 0b001111000;
+			break;
+		case 0b1001101100 :
+			data = 0b001111001;
+			break;
+		case 0b0101101100 :
+			data = 0b001111010;
+			break;
+		case 0b1101100011 :
+			data = 0b001111011;
+			break;
+		case 0b0011101100 :
+			data = 0b001111100;
+			break;
+		case 0b1011100011 :
+			data = 0b001111101;
+			break;
+		case 0b0111100011 :
+			data = 0b001111110;
+			break;
+		case 0b1010110011 :
+			data = 0b001111111;
+			break;
+		case 0b1001110010 :
+			data = 0b010000000;
+			break;
+		case 0b0111010010 :
+			data = 0b010000001;
+			break;
+		case 0b1011010010 :
+			data = 0b010000010;
+			break;
+		case 0b1100011101 :
+			data = 0b010000011;
+			break;
+		case 0b1101010010 :
+			data = 0b010000100;
+			break;
+		case 0b1010011101 :
+			data = 0b010000101;
+			break;
+		case 0b0110011101 :
+			data = 0b010000110;
+			break;
+		case 0b1110001101 :
+			data = 0b010000111;
+			break;
+		case 0b1110010010 :
+			data = 0b010001000;
+			break;
+		case 0b1001011101 :
+			data = 0b010001001;
+			break;
+		case 0b0101011101 :
+			data = 0b010001010;
+			break;
+		case 0b1101001101 :
+			data = 0b010001011;
+			break;
+		case 0b0011011101 :
+			data = 0b010001100;
+			break;
+		case 0b1011001101 :
+			data = 0b010001101;
+			break;
+		case 0b0111001101 :
+			data = 0b010001110;
+			break;
+		case 0b0101110010 :
+			data = 0b010001111;
+			break;
+		case 0b0110110010 :
+			data = 0b010010000;
+			break;
+		case 0b1000111101 :
+			data = 0b010010001;
+			break;
+		case 0b0100111101 :
+			data = 0b010010010;
+			break;
+		case 0b1100101101 :
+			data = 0b010010011;
+			break;
+		case 0b0010111101 :
+			data = 0b010010100;
+			break;
+		case 0b1010101101 :
+			data = 0b010010101;
+			break;
+		case 0b0110101101 :
+			data = 0b010010110;
+			break;
+		case 0b1110100010 :
+			data = 0b010010111;
+			break;
+		case 0b1100110010 :
+			data = 0b010011000;
+			break;
+		case 0b1001101101 :
+			data = 0b010011001;
+			break;
+		case 0b0101101101 :
+			data = 0b010011010;
+			break;
+		case 0b1101100010 :
+			data = 0b010011011;
+			break;
+		case 0b0011101101 :
+			data = 0b010011100;
+			break;
+		case 0b1011100010 :
+			data = 0b010011101;
+			break;
+		case 0b0111100010 :
+			data = 0b010011110;
+			break;
+		case 0b1010110010 :
+			data = 0b010011111;
+			break;
+		case 0b1001111010 :
+			data = 0b010100000;
+			break;
+		case 0b0111011010 :
+			data = 0b010100001;
+			break;
+		case 0b1011011010 :
+			data = 0b010100010;
+			break;
+		case 0b1100011010 :
+			data = 0b010100011;
+			break;
+		case 0b1101011010 :
+			data = 0b010100100;
+			break;
+		case 0b1010011010 :
+			data = 0b010100101;
+			break;
+		case 0b0110011010 :
+			data = 0b010100110;
+			break;
+		case 0b1110001010 :
+			data = 0b010100111;
+			break;
+		case 0b1110011010 :
+			data = 0b010101000;
+			break;
+		case 0b1001011010 :
+			data = 0b010101001;
+			break;
+		case 0b0101011010 :
+			data = 0b010101010;
+			break;
+		case 0b1101001010 :
+			data = 0b010101011;
+			break;
+		case 0b0011011010 :
+			data = 0b010101100;
+			break;
+		case 0b1011001010 :
+			data = 0b010101101;
+			break;
+		case 0b0111001010 :
+			data = 0b010101110;
+			break;
+		case 0b0101111010 :
+			data = 0b010101111;
+			break;
+		case 0b0110111010 :
+			data = 0b010110000;
+			break;
+		case 0b1000111010 :
+			data = 0b010110001;
+			break;
+		case 0b0100111010 :
+			data = 0b010110010;
+			break;
+		case 0b1100101010 :
+			data = 0b010110011;
+			break;
+		case 0b0010111010 :
+			data = 0b010110100;
+			break;
+		case 0b1010101010 :
+			data = 0b010110101;
+			break;
+		case 0b0110101010 :
+			data = 0b010110110;
+			break;
+		case 0b1110101010 :
+			data = 0b010110111;
+			break;
+		case 0b1100111010 :
+			data = 0b010111000;
+			break;
+		case 0b1001101010 :
+			data = 0b010111001;
+			break;
+		case 0b0101101010 :
+			data = 0b010111010;
+			break;
+		case 0b1101101010 :
+			data = 0b010111011;
+			break;
+		case 0b0011101010 :
+			data = 0b010111100;
+			break;
+		case 0b1011101010 :
+			data = 0b010111101;
+			break;
+		case 0b0111101010 :
+			data = 0b010111110;
+			break;
+		case 0b1010111010 :
+			data = 0b010111111;
+			break;
+		case 0b1001110110 :
+			data = 0b011000000;
+			break;
+		case 0b0111010110 :
+			data = 0b011000001;
+			break;
+		case 0b1011010110 :
+			data = 0b011000010;
+			break;
+		case 0b1100010110 :
+			data = 0b011000011;
+			break;
+		case 0b1101010110 :
+			data = 0b011000100;
+			break;
+		case 0b1010010110 :
+			data = 0b011000101;
+			break;
+		case 0b0110010110 :
+			data = 0b011000110;
+			break;
+		case 0b1110000110 :
+			data = 0b011000111;
+			break;
+		case 0b1110010110 :
+			data = 0b011001000;
+			break;
+		case 0b1001010110 :
+			data = 0b011001001;
+			break;
+		case 0b0101010110 :
+			data = 0b011001010;
+			break;
+		case 0b1101000110 :
+			data = 0b011001011;
+			break;
+		case 0b0011010110 :
+			data = 0b011001100;
+			break;
+		case 0b1011000110 :
+			data = 0b011001101;
+			break;
+		case 0b0111000110 :
+			data = 0b011001110;
+			break;
+		case 0b0101110110 :
+			data = 0b011001111;
+			break;
+		case 0b0110110110 :
+			data = 0b011010000;
+			break;
+		case 0b1000110110 :
+			data = 0b011010001;
+			break;
+		case 0b0100110110 :
+			data = 0b011010010;
+			break;
+		case 0b1100100110 :
+			data = 0b011010011;
+			break;
+		case 0b0010110110 :
+			data = 0b011010100;
+			break;
+		case 0b1010100110 :
+			data = 0b011010101;
+			break;
+		case 0b0110100110 :
+			data = 0b011010110;
+			break;
+		case 0b1110100110 :
+			data = 0b011010111;
+			break;
+		case 0b1100110110 :
+			data = 0b011011000;
+			break;
+		case 0b1001100110 :
+			data = 0b011011001;
+			break;
+		case 0b0101100110 :
+			data = 0b011011010;
+			break;
+		case 0b1101100110 :
+			data = 0b011011011;
+			break;
+		case 0b0011100110 :
+			data = 0b011011100;
+			break;
+		case 0b1011100110 :
+			data = 0b011011101;
+			break;
+		case 0b0111100110 :
+			data = 0b011011110;
+			break;
+		case 0b1010110110 :
+			data = 0b011011111;
+			break;
+		case 0b1001110001 :
+			data = 0b011100000;
+			break;
+		case 0b0111010001 :
+			data = 0b011100001;
+			break;
+		case 0b1011010001 :
+			data = 0b011100010;
+			break;
+		case 0b1100011110 :
+			data = 0b011100011;
+			break;
+		case 0b1101010001 :
+			data = 0b011100100;
+			break;
+		case 0b1010011110 :
+			data = 0b011100101;
+			break;
+		case 0b0110011110 :
+			data = 0b011100110;
+			break;
+		case 0b1110001110 :
+			data = 0b011100111;
+			break;
+		case 0b1110010001 :
+			data = 0b011101000;
+			break;
+		case 0b1001011110 :
+			data = 0b011101001;
+			break;
+		case 0b0101011110 :
+			data = 0b011101010;
+			break;
+		case 0b1101001110 :
+			data = 0b011101011;
+			break;
+		case 0b0011011110 :
+			data = 0b011101100;
+			break;
+		case 0b1011001110 :
+			data = 0b011101101;
+			break;
+		case 0b0111001110 :
+			data = 0b011101110;
+			break;
+		case 0b0101110001 :
+			data = 0b011101111;
+			break;
+		case 0b0110110001 :
+			data = 0b011110000;
+			break;
+		case 0b1000110111 :
+			data = 0b011110001;
+			break;
+		case 0b0100110111 :
+			data = 0b011110010;
+			break;
+		case 0b1100101110 :
+			data = 0b011110011;
+			break;
+		case 0b0010110111 :
+			data = 0b011110100;
+			break;
+		case 0b1010101110 :
+			data = 0b011110101;
+			break;
+		case 0b0110101110 :
+			data = 0b011110110;
+			break;
+		case 0b1110100001 :
+			data = 0b011110111;
+			break;
+		case 0b1100110001 :
+			data = 0b011111000;
+			break;
+		case 0b1001101110 :
+			data = 0b011111001;
+			break;
+		case 0b0101101110 :
+			data = 0b011111010;
+			break;
+		case 0b1101100001 :
+			data = 0b011111011;
+			break;
+		case 0b0011101110 :
+			data = 0b011111100;
+			break;
+		case 0b1011100001 :
+			data = 0b011111101;
+			break;
+		case 0b0111100001 :
+			data = 0b011111110;
+			break;
+		case 0b1010110001 :
+			data = 0b011111111;
+			break;
+		case 0b0110001011 :
+			data = 0b100000000;
+			break;
+		case 0b1000101011 :
+			data = 0b100000001;
+			break;
+		case 0b0100101011 :
+			data = 0b100000010;
+			break;
+		case 0b1100010100 :
+			data = 0b100000011;
+			break;
+		case 0b0010101011 :
+			data = 0b100000100;
+			break;
+		case 0b1010010100 :
+			data = 0b100000101;
+			break;
+		case 0b0110010100 :
+			data = 0b100000110;
+			break;
+		case 0b0001110100 :
+			data = 0b100000111;
+			break;
+		case 0b0001101011 :
+			data = 0b100001000;
+			break;
+		case 0b1001010100 :
+			data = 0b100001001;
+			break;
+		case 0b0101010100 :
+			data = 0b100001010;
+			break;
+		case 0b1101000100 :
+			data = 0b100001011;
+			break;
+		case 0b0011010100 :
+			data = 0b100001100;
+			break;
+		case 0b1011000100 :
+			data = 0b100001101;
+			break;
+		case 0b0111000100 :
+			data = 0b100001110;
+			break;
+		case 0b1010001011 :
+			data = 0b100001111;
+			break;
+		case 0b1001001011 :
+			data = 0b100010000;
+			break;
+		case 0b1000110100 :
+			data = 0b100010001;
+			break;
+		case 0b0100110100 :
+			data = 0b100010010;
+			break;
+		case 0b1100100100 :
+			data = 0b100010011;
+			break;
+		case 0b0010110100 :
+			data = 0b100010100;
+			break;
+		case 0b1010100100 :
+			data = 0b100010101;
+			break;
+		case 0b0110100100 :
+			data = 0b100010110;
+			break;
+		case 0b0001011011 :
+			data = 0b100010111;
+			break;
+		case 0b0011001011 :
+			data = 0b100011000;
+			break;
+		case 0b1001100100 :
+			data = 0b100011001;
+			break;
+		case 0b0101100100 :
+			data = 0b100011010;
+			break;
+		case 0b0010011011 :
+			data = 0b100011011;
+			break;
+		case 0b0011100100 :
+			data = 0b100011100;
+			break;
+		case 0b0100011011 :
+			data = 0b100011101;
+			break;
+		case 0b1000011011 :
+			data = 0b100011110;
+			break;
+		case 0b0101001011 :
+			data = 0b100011111;
+			break;
+		case 0b0110001001 :
+			data = 0b100100000;
+			break;
+		case 0b1000101001 :
+			data = 0b100100001;
+			break;
+		case 0b0100101001 :
+			data = 0b100100010;
+			break;
+		case 0b0010101001 :
+			data = 0b100100100;
+			break;
+		case 0b0001111001 :
+			data = 0b100100111;
+			break;
+		case 0b0001101001 :
+			data = 0b100101000;
+			break;
+		case 0b1010001001 :
+			data = 0b100101111;
+			break;
+		case 0b1001001001 :
+			data = 0b100110000;
+			break;
+		case 0b0001011001 :
+			data = 0b100110111;
+			break;
+		case 0b0011001001 :
+			data = 0b100111000;
+			break;
+		case 0b0010011001 :
+			data = 0b100111011;
+			break;
+		case 0b0100011001 :
+			data = 0b100111101;
+			break;
+		case 0b1000011001 :
+			data = 0b100111110;
+			break;
+		case 0b0101001001 :
+			data = 0b100111111;
+			break;
+		case 0b0110000101 :
+			data = 0b101000000;
+			break;
+		case 0b1000100101 :
+			data = 0b101000001;
+			break;
+		case 0b0100100101 :
+			data = 0b101000010;
+			break;
+		case 0b0010100101 :
+			data = 0b101000100;
+			break;
+		case 0b0001110101 :
+			data = 0b101000111;
+			break;
+		case 0b0001100101 :
+			data = 0b101001000;
+			break;
+		case 0b1010000101 :
+			data = 0b101001111;
+			break;
+		case 0b1001000101 :
+			data = 0b101010000;
+			break;
+		case 0b0001010101 :
+			data = 0b101010111;
+			break;
+		case 0b0011000101 :
+			data = 0b101011000;
+			break;
+		case 0b0010010101 :
+			data = 0b101011011;
+			break;
+		case 0b0100010101 :
+			data = 0b101011101;
+			break;
+		case 0b1000010101 :
+			data = 0b101011110;
+			break;
+		case 0b0101000101 :
+			data = 0b101011111;
+			break;
+		case 0b0110001100 :
+			data = 0b101100000;
+			break;
+		case 0b1000101100 :
+			data = 0b101100001;
+			break;
+		case 0b0100101100 :
+			data = 0b101100010;
+			break;
+		case 0b1100010011 :
+			data = 0b101100011;
+			break;
+		case 0b0010101100 :
+			data = 0b101100100;
+			break;
+		case 0b1010010011 :
+			data = 0b101100101;
+			break;
+		case 0b0110010011 :
+			data = 0b101100110;
+			break;
+		case 0b0001110011 :
+			data = 0b101100111;
+			break;
+		case 0b0001101100 :
+			data = 0b101101000;
+			break;
+		case 0b1001010011 :
+			data = 0b101101001;
+			break;
+		case 0b0101010011 :
+			data = 0b101101010;
+			break;
+		case 0b1101000011 :
+			data = 0b101101011;
+			break;
+		case 0b0011010011 :
+			data = 0b101101100;
+			break;
+		case 0b1011000011 :
+			data = 0b101101101;
+			break;
+		case 0b0111000011 :
+			data = 0b101101110;
+			break;
+		case 0b1010001100 :
+			data = 0b101101111;
+			break;
+		case 0b1001001100 :
+			data = 0b101110000;
+			break;
+		case 0b1000110011 :
+			data = 0b101110001;
+			break;
+		case 0b0100110011 :
+			data = 0b101110010;
+			break;
+		case 0b1100100011 :
+			data = 0b101110011;
+			break;
+		case 0b0010110011 :
+			data = 0b101110100;
+			break;
+		case 0b1010100011 :
+			data = 0b101110101;
+			break;
+		case 0b0110100011 :
+			data = 0b101110110;
+			break;
+		case 0b0001011100 :
+			data = 0b101110111;
+			break;
+		case 0b0011001100 :
+			data = 0b101111000;
+			break;
+		case 0b1001100011 :
+			data = 0b101111001;
+			break;
+		case 0b0101100011 :
+			data = 0b101111010;
+			break;
+		case 0b0010011100 :
+			data = 0b101111011;
+			break;
+		case 0b0011100011 :
+			data = 0b101111100;
+			break;
+		case 0b0100011100 :
+			data = 0b101111101;
+			break;
+		case 0b1000011100 :
+			data = 0b101111110;
+			break;
+		case 0b0101001100 :
+			data = 0b101111111;
+			break;
+		case 0b0110001101 :
+			data = 0b110000000;
+			break;
+		case 0b1000101101 :
+			data = 0b110000001;
+			break;
+		case 0b0100101101 :
+			data = 0b110000010;
+			break;
+		case 0b1100010010 :
+			data = 0b110000011;
+			break;
+		case 0b0010101101 :
+			data = 0b110000100;
+			break;
+		case 0b1010010010 :
+			data = 0b110000101;
+			break;
+		case 0b0110010010 :
+			data = 0b110000110;
+			break;
+		case 0b0001110010 :
+			data = 0b110000111;
+			break;
+		case 0b0001101101 :
+			data = 0b110001000;
+			break;
+		case 0b1001010010 :
+			data = 0b110001001;
+			break;
+		case 0b0101010010 :
+			data = 0b110001010;
+			break;
+		case 0b1101000010 :
+			data = 0b110001011;
+			break;
+		case 0b0011010010 :
+			data = 0b110001100;
+			break;
+		case 0b1011000010 :
+			data = 0b110001101;
+			break;
+		case 0b0111000010 :
+			data = 0b110001110;
+			break;
+		case 0b1010001101 :
+			data = 0b110001111;
+			break;
+		case 0b1001001101 :
+			data = 0b110010000;
+			break;
+		case 0b1000110010 :
+			data = 0b110010001;
+			break;
+		case 0b0100110010 :
+			data = 0b110010010;
+			break;
+		case 0b1100100010 :
+			data = 0b110010011;
+			break;
+		case 0b0010110010 :
+			data = 0b110010100;
+			break;
+		case 0b1010100010 :
+			data = 0b110010101;
+			break;
+		case 0b0110100010 :
+			data = 0b110010110;
+			break;
+		case 0b0001011101 :
+			data = 0b110010111;
+			break;
+		case 0b0011001101 :
+			data = 0b110011000;
+			break;
+		case 0b1001100010 :
+			data = 0b110011001;
+			break;
+		case 0b0101100010 :
+			data = 0b110011010;
+			break;
+		case 0b0010011101 :
+			data = 0b110011011;
+			break;
+		case 0b0011100010 :
+			data = 0b110011100;
+			break;
+		case 0b0100011101 :
+			data = 0b110011101;
+			break;
+		case 0b1000011101 :
+			data = 0b110011110;
+			break;
+		case 0b0101001101 :
+			data = 0b110011111;
+			break;
+		case 0b0110001010 :
+			data = 0b110100000;
+			break;
+		case 0b1000101010 :
+			data = 0b110100001;
+			break;
+		case 0b0100101010 :
+			data = 0b110100010;
+			break;
+		case 0b0010101010 :
+			data = 0b110100100;
+			break;
+		case 0b0001111010 :
+			data = 0b110100111;
+			break;
+		case 0b0001101010 :
+			data = 0b110101000;
+			break;
+		case 0b1010001010 :
+			data = 0b110101111;
+			break;
+		case 0b1001001010 :
+			data = 0b110110000;
+			break;
+		case 0b0001011010 :
+			data = 0b110110111;
+			break;
+		case 0b0011001010 :
+			data = 0b110111000;
+			break;
+		case 0b0010011010 :
+			data = 0b110111011;
+			break;
+		case 0b0100011010 :
+			data = 0b110111101;
+			break;
+		case 0b1000011010 :
+			data = 0b110111110;
+			break;
+		case 0b0101001010 :
+			data = 0b110111111;
+			break;
+		case 0b0110000110 :
+			data = 0b111000000;
+			break;
+		case 0b1000100110 :
+			data = 0b111000001;
+			break;
+		case 0b0100100110 :
+			data = 0b111000010;
+			break;
+		case 0b0010100110 :
+			data = 0b111000100;
+			break;
+		case 0b0001110110 :
+			data = 0b111000111;
+			break;
+		case 0b0001100110 :
+			data = 0b111001000;
+			break;
+		case 0b1010000110 :
+			data = 0b111001111;
+			break;
+		case 0b1001000110 :
+			data = 0b111010000;
+			break;
+		case 0b0001010110 :
+			data = 0b111010111;
+			break;
+		case 0b0011000110 :
+			data = 0b111011000;
+			break;
+		case 0b0010010110 :
+			data = 0b111011011;
+			break;
+		case 0b0100010110 :
+			data = 0b111011101;
+			break;
+		case 0b1000010110 :
+			data = 0b111011110;
+			break;
+		case 0b0101000110 :
+			data = 0b111011111;
+			break;
+		case 0b0110001110 :
+			data = 0b111100000;
+			break;
+		case 0b1000101110 :
+			data = 0b111100001;
+			break;
+		case 0b0100101110 :
+			data = 0b111100010;
+			break;
+		case 0b1100010001 :
+			data = 0b111100011;
+			break;
+		case 0b0010101110 :
+			data = 0b111100100;
+			break;
+		case 0b1010010001 :
+			data = 0b111100101;
+			break;
+		case 0b0110010001 :
+			data = 0b111100110;
+			break;
+		case 0b0001110001 :
+			data = 0b111100111;
+			break;
+		case 0b0001101110 :
+			data = 0b111101000;
+			break;
+		case 0b1001010001 :
+			data = 0b111101001;
+			break;
+		case 0b0101010001 :
+			data = 0b111101010;
+			break;
+		case 0b1101001000 :
+			data = 0b111101011;
+			break;
+		case 0b0011010001 :
+			data = 0b111101100;
+			break;
+		case 0b1011001000 :
+			data = 0b111101101;
+			break;
+		case 0b0111001000 :
+			data = 0b111101110;
+			break;
+		case 0b1010001110 :
+			data = 0b111101111;
+			break;
+		case 0b1001001110 :
+			data = 0b111110000;
+			break;
+		case 0b1000110001 :
+			data = 0b111110001;
+			break;
+		case 0b0100110001 :
+			data = 0b111110010;
+			break;
+		case 0b1100100001 :
+			data = 0b111110011;
+			break;
+		case 0b0010110001 :
+			data = 0b111110100;
+			break;
+		case 0b1010100001 :
+			data = 0b111110101;
+			break;
+		case 0b0110100001 :
+			data = 0b111110110;
+			break;
+		case 0b0001011110 :
+			data = 0b111110111;
+			break;
+		case 0b0011001110 :
+			data = 0b111111000;
+			break;
+		case 0b1001100001 :
+			data = 0b111111001;
+			break;
+		case 0b0101100001 :
+			data = 0b111111010;
+			break;
+		case 0b0010011110 :
+			data = 0b111111011;
+			break;
+		case 0b0011100001 :
+			data = 0b111111100;
+			break;
+		case 0b0100011110 :
+			data = 0b111111101;
+			break;
+		case 0b1000011110 :
+			data = 0b111111110;
+			break;
+		case 0b0101001110 :
+			data = 0b111111111;
+			break;
+		default :
+			data = 0b000000000;
+			break;
+	}
+}

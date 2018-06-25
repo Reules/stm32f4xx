@@ -7,6 +7,8 @@ C_SRCS += \
 ../Src/ad5641.c \
 ../Src/adf4159.c \
 ../Src/bgt24mtr11.c \
+../Src/bitDecode.c \
+../Src/fsk_crc16.c \
 ../Src/main.c \
 ../Src/microsec_delay.c \
 ../Src/rs232_menu.c \
@@ -19,6 +21,8 @@ OBJS += \
 ./Src/ad5641.o \
 ./Src/adf4159.o \
 ./Src/bgt24mtr11.o \
+./Src/bitDecode.o \
+./Src/fsk_crc16.o \
 ./Src/main.o \
 ./Src/microsec_delay.o \
 ./Src/rs232_menu.o \
@@ -31,6 +35,8 @@ C_DEPS += \
 ./Src/ad5641.d \
 ./Src/adf4159.d \
 ./Src/bgt24mtr11.d \
+./Src/bitDecode.d \
+./Src/fsk_crc16.d \
 ./Src/main.d \
 ./Src/microsec_delay.d \
 ./Src/rs232_menu.d \

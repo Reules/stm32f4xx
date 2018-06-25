@@ -1,0 +1,15 @@
+16:14:24 **** Incremental Build of configuration Debug for project Uart ****
+make all 
+Building file: ../Src/rs232_menu.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\Uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/Uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/Uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/Uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/Uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/Uart/Drivers/CMSIS/Include"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/rs232_menu.d" -MT"Src/rs232_menu.o" -o "Src/rs232_menu.o" "../Src/rs232_menu.c"
+../Src/rs232_menu.c:3:31: fatal error: stm32f4xx_hal_spi.h: No such file or directory
+ #include "stm32f4xx_hal_spi.h"
+                               ^
+compilation terminated.
+make: *** [Src/rs232_menu.o] Error 1
+Src/subdir.mk:30: recipe for target 'Src/rs232_menu.o' failed
+
+16:14:25 Build Finished (took 1s.344ms)
+

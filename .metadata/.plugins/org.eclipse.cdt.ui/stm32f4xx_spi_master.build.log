@@ -1,0 +1,33 @@
+12:03:32 **** Build of configuration Debug for project stm32f4xx_spi_master ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_master\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_master/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_master/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_master/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_master/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_master/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_master/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c: In function 'main':
+../Src/main.c:110:29: warning: passing argument 2 of 'HAL_SPI_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_SPI_Transmit(&hspi3, (uint16_t*)dataTx, 1, 5000);
+                             ^
+In file included from C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_master/Inc/stm32f4xx_hal_conf.h:360:0,
+                 from C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_master/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:48,
+                 from ../Src/main.c:40:
+C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_master/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:441:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint16_t * {aka short unsigned int *}'
+ HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_master.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_master.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_master.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_master.elf" "stm32f4xx_spi_master.bin"
+arm-none-eabi-size "stm32f4xx_spi_master.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4832	     12	   1660	   6504	   1968	stm32f4xx_spi_master.elf
+ 
+
+12:03:38 Build Finished (took 5s.828ms)
+

@@ -11,19 +11,19 @@ void bgt24Init(void){
 	Spi1Bgt24Tran();
 }
 
-void bgt24PowerOn(void){
-	static uint16_t spi1DataTxpower = 2311; //spi transport 0000100000111111b to bgt24mtr11, TX power enabled and no reduce
+void bgt24PowerUp(void){
+	static uint16_t spi1DataTxpowerUp = 2113; //spi transport 0001 1000 0100 0001b to bgt24mtr11, TX power enabled and no reduce
 	MX_SPI1_BGT24_Init();
 	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET);
-	HAL_SPI_Transmit(&hspi1, (uint8_t*) &spi1DataTxpower, 1, 5000);
+	HAL_SPI_Transmit(&hspi1, (uint8_t*) &spi1DataTxpowerUp, 1, 5000);
 	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET);
 }
 
 void bgt24PowerDown(void){
-	static uint16_t spi1DataTxpower = 6215; //TX power disabled
+	static uint16_t spi1DataTxpowerDown = 6215; //TX power disabled
 	MX_SPI1_BGT24_Init();
 	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET);
-	HAL_SPI_Transmit(&hspi1, (uint8_t*) &spi1DataTxpower, 1, 5000);
+	HAL_SPI_Transmit(&hspi1, (uint8_t*) &spi1DataTxpowerDown, 1, 5000);
 	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET);
 }
 

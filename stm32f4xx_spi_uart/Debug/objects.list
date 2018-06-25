@@ -17,6 +17,8 @@
 "Src/ad5641.o"
 "Src/adf4159.o"
 "Src/bgt24mtr11.o"
+"Src/bitDecode.o"
+"Src/fsk_crc16.o"
 "Src/main.o"
 "Src/microsec_delay.o"
 "Src/rs232_menu.o"

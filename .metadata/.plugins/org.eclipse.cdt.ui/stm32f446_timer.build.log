@@ -1,0 +1,6 @@
+11:48:17 **** Incremental Build of configuration Debug for project stm32f446_timer ****
+make all 
+make: Nothing to be done for 'all'.
+
+11:48:17 Build Finished (took 360ms)
+

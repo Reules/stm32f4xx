@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;uart_1/inc/tm_stm32f4_usart.h&apos; to &apos;usart_debug.h&apos;" description="Rename resource &apos;tm_stm32f4_usart.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="inc/tm_stm32f4_usart.h" name="usart_debug.h" stamp="1515668981319" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;uart_1/src/tm_stm32f4_usart.c&apos; to &apos;usart_debug.c&apos;" description="Rename resource &apos;tm_stm32f4_usart.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/tm_stm32f4_usart.c" name="usart_debug.c" stamp="1515668993478" updateReferences="true"/>
+</session>

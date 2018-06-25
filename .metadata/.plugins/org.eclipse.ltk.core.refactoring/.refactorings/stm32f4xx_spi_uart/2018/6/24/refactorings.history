@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;stm32f4xx_spi_uart/Inc/10b8bDec.h&apos; to &apos;bitDecode.h&apos;" description="Rename resource &apos;10b8bDec.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Inc/10b8bDec.h" name="bitDecode.h" stamp="1528978342568" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;stm32f4xx_spi_uart/Src/10b8bDec.c&apos; to &apos;bitDecode.c&apos;" description="Rename resource &apos;10b8bDec.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/10b8bDec.c" name="bitDecode.c" stamp="1528978361302" updateReferences="true"/>
+</session>

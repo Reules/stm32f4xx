@@ -4,7 +4,7 @@
 #define BGT_CONF_SPI	6215
 
 void bgt24Init(void);
-void bgt24PowerOn(void);
+void bgt24PowerUp(void);
 void bgt24PowerDown(void);
 
 /*the tranmission functions*/

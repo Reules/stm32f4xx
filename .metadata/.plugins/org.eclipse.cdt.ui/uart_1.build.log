@@ -1,0 +1,16 @@
+12:10:37 **** Incremental Build of configuration Debug for project uart_1 ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\uart_1\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DDEBUG -DSTM32F446xx -DUSE_STDPERIPH_DRIVER -I"C:/Users/min_bao/Documents/Workspace/uart_1/StdPeriph_Driver/inc" -I"C:/Users/min_bao/Documents/Workspace/uart_1/inc" -I"C:/Users/min_bao/Documents/Workspace/uart_1/CMSIS/device" -I"C:/Users/min_bao/Documents/Workspace/uart_1/CMSIS/core" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:3:0:
+C:/Users/min_bao/Documents/Workspace/uart_1/inc/usart_debug.h:7:23: fatal error: stm32f10x.h: No such file or directory
+ #include "stm32f10x.h"
+                       ^
+compilation terminated.
+make: *** [src/main.o] Error 1
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+
+12:10:39 Build Finished (took 1s.878ms)
+

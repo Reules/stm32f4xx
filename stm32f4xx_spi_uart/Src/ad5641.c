@@ -54,7 +54,7 @@ void turnDacUp(void){
 		spi3DataTx = spi3DataTx - 20;
 	}
 	Spi3DacTran();
-	uartPrintDacValue(spi3DataTx);
+//	uartPrintDacValue(spi3DataTx);
 }
 
 void turnDacDown(void){
@@ -64,7 +64,7 @@ void turnDacDown(void){
 		spi3DataTx = spi3DataTx + 20;
 	}
 	Spi3DacTran();
-	uartPrintDacValue(spi3DataTx);
+//	uartPrintDacValue(spi3DataTx);
 }
 
 void Spi3DacTran(void){

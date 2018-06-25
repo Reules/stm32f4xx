@@ -13,6 +13,7 @@
 #include "uartPrint.h"
 
 extern UART_HandleTypeDef huart1;
+extern TIM_HandleTypeDef htim8;
 
 //interrupt variables
 extern char uart1DataRx;			//receive interrupt Bit
@@ -137,8 +138,11 @@ static void ad5641MenuExcution(const struct rs232_menu *menu) {
 }
 
 static void hfBoardMenuExcution(const struct rs232_menu *menu) {
-	bgt24Init();	//initial the spi interface of bgt24mtr11, PA and 64k prescaler disabled
+	bgt24Init();	//initial the spi interface of bgt24mtr11, 64k prescaler disabled
 	adf4159Init();
+//	  HAL_TIM_IC_Start_IT(&htim8,TIM_CHANNEL_1);
+//	  HAL_TIM_IC_Start_IT(&htim8,TIM_CHANNEL_2);
+
 	do {
 		//print options through uart1
 		uartPrintMenu(menu);
@@ -159,11 +163,11 @@ static void hfBoardMenuExcution(const struct rs232_menu *menu) {
 			case 1:
 				adf4159RampOn();
 				break;
-			case 2:
-				adf4159Fsk();
-				break;
+//			case 2:
+//				adf4159Fsk();
+//				break;
 			case 3:
-				bgt24PowerOn();
+				bgt24PowerUp();
 				break;
 			case 4:
 				bgt24PowerDown();

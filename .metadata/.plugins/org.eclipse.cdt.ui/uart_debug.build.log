@@ -1,0 +1,15 @@
+09:22:45 **** Incremental Build of configuration Debug for project uart_debug ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\uart_debug\Debug
+arm-none-eabi-gcc -mthumb -mfloat-abi=soft -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c:39:18: fatal error: main.h: No such file or directory
+ #include "main.h"
+                  ^
+compilation terminated.
+Src/subdir.mk:27: recipe for target 'Src/main.o' failed
+make: *** [Src/main.o] Error 1
+
+09:22:46 Build Finished (took 911ms)
+

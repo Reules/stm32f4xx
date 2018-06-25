@@ -1,0 +1,6 @@
+10:33:27 **** Incremental Build of configuration Debug for project stm32f446RE_SPI_Master ****
+make all 
+make: Nothing to be done for 'all'.
+
+10:33:27 Build Finished (took 437ms)
+
