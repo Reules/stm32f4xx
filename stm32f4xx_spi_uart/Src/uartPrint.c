@@ -15,7 +15,7 @@ void uartPrintEnter(void)
 void uartPrintString(char* string)
 {
 	uart1BufferLen = sprintf(uart1BufferTx, string);
-	HAL_UART_Transmit(&huart1, (uint8_t *)uart1BufferTx, uart1BufferLen, 1000);
+	HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, uart1BufferLen, 1000);
 }
 
 void uartPrintMenu(const struct rs232_menu *menu)
@@ -26,7 +26,8 @@ void uartPrintMenu(const struct rs232_menu *menu)
 
 void uartPrintMenuOption(const struct rs232_menu *menu, int i)
 {
-	uart1BufferLen = sprintf(uart1BufferTx, "%d: %s\n\r", i + 1,menu->menuOption[i]);
+	uart1BufferLen = sprintf(uart1BufferTx, "%d: %s\n\r", i + 1,
+			menu->menuOption[i]);
 	HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, uart1BufferLen, 1000);
 }
 
@@ -38,6 +39,7 @@ void uartPrintNumber(long int number)
 
 void uartPrintDacValue(uint16_t dacValue)
 {
-	uart1BufferLen = sprintf(uart1BufferTx,"current DAC value is: %d\r", dacValue);
-		HAL_UART_Transmit(&huart1, (uint8_t *)uart1BufferTx, uart1BufferLen, 1000);
+	uart1BufferLen = sprintf(uart1BufferTx, "current DAC value is: %d\r",
+			dacValue);
+	HAL_UART_Transmit(&huart1, (uint8_t *) uart1BufferTx, uart1BufferLen, 1000);
 }

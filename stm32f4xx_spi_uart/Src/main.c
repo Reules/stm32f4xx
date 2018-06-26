@@ -61,28 +61,29 @@ UART_HandleTypeDef huart1;
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 SPI_HandleTypeDef hspi1;
-uint32_t tim5Cnt = 0;
 
+// the time calibration variables
+uint32_t tim5Cnt = 0;
+uint8_t delayFlag = 6;
+uint8_t toggleFlag = 0;
+
+//pwm input capture variables
 uint32_t pwmCh1Cnt = 0;
 uint32_t pwmCh2Cnt = 0;
 uint32_t bitLen = 0;
 uint64_t dataBitCnt = 0;
-uint8_t toggleFlag = 0;
 uint8_t fskDataFlag = 0;
 uint64_t fskBuffer = 0;
-uint16_t fskData10B[40];
-uint8_t fskData8B[40];
-uint16_t dataLen[2];
-uint16_t dataAdd[2];
+uint16_t fskData10B[256];
+uint16_t fskData8B[256];
 uint8_t oneByteReceived = 0;
-uint8_t fskDataIndex = 0;
 uint8_t dataByteIndex = 0;
-uint8_t delayFlag = 6;
-uint8_t dataLength = 40;
+uint16_t dataLength = 256;
 uint8_t parityBit = 0;
 uint8_t fskAddress[2] = {0, 0};
 uint8_t fskCrc16 [2] = {0, 0};
 uint8_t dataReceived = 0;
+
 //uart interrupt variable
 char uart1DataRx;			//receive interrupt Bit
 uint8_t uart1TxCplt;			//Interrupt complete Bit
@@ -106,174 +107,158 @@ static void MX_TIM2_Init(void);
 void MX_SPI1_ADF4159_Init(void);
 void MX_SPI1_BGT24_Init(void);
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
 	if (huart->Instance == USART1)  //current UART
 		uart1TxCplt = 1;          //transfer complete, data is ready to read
 }
 
-void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim) {
+void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
+{
 
-	if (toggleFlag == 0) {
+	if (toggleFlag == 0)
+	{
 		toggleFlag = 1;
-	} else {
-		if(delayFlag<6)
+	}
+	else
+	{
+		if (delayFlag < 6)
 		{
 			delayFlag++;
 			__HAL_TIM_SetCounter(&htim5, 0);
-			toggleFlag=0;
+			toggleFlag = 0;
 		}
-		else{
-		tim5Cnt = __HAL_TIM_GET_COUNTER(&htim5);
+		else
+		{
+			tim5Cnt = __HAL_TIM_GET_COUNTER(&htim5);
 
-		//print the counter value of timer2
+			//print the counter value of timer2
 			uartPrintNumber(tim5Cnt);
 
-		if (tim5Cnt < 7199999) {
-			turnDacUp();
-		} else if (tim5Cnt > 7199999) {
-			turnDacDown();
-		}
-		__HAL_TIM_SetCounter(&htim5, 0);
+			if (tim5Cnt < 7199999)
+			{
+				turnDacUp();
+			}
+			else if (tim5Cnt > 7199999)
+			{
+				turnDacDown();
+			}
+			__HAL_TIM_SetCounter(&htim5, 0);
 
-		toggleFlag = 0;
-		delayFlag = 0;
+			toggleFlag = 0;
+			delayFlag = 0;
 		}
 	}
 
 }
 
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) {
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+{
 
 	if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
 	{
-		//calculator the bit lang
+		//get the counter of timer and calculator the bit lang
 		pwmCh1Cnt = HAL_TIM_ReadCapturedValue(&htim8, TIM_CHANNEL_1);
-		bitLen=(pwmCh1Cnt - pwmCh2Cnt + 30) / ONE_BIT_LENGTH;
+		bitLen = (pwmCh1Cnt - pwmCh2Cnt + 30) / ONE_BIT_LENGTH;
 		fskBuffer = fskBuffer << bitLen;
 
-		//ready to receive data 0s
-		if( fskDataFlag == 1 )
+		//ready to receive data 0s, fskDataFlag = 1, receive 0s, fskDataFlag = 2, receive 1s
+		if (fskDataFlag == 1)
 		{
 			dataBitCnt = dataBitCnt + bitLen;
 
-				if( dataBitCnt <= 10)
+			if (dataBitCnt <= 10)
+			{
+				fskData10B[dataByteIndex] = fskData10B[dataByteIndex] << bitLen;
+				fskDataFlag = 2;	//change the flag to receive 1s
+			}
+			else
+			{
+				dataBitCnt = dataBitCnt - 10;
+				fskData10B[dataByteIndex] = fskData10B[dataByteIndex] << (bitLen - dataBitCnt);
+				oneByteReceived = 1;
+				dataByteIndex++;
+
+				//receive next byte
+				if (dataByteIndex < dataLength)
 				{
-					fskData10B[dataByteIndex] = fskData10B[dataByteIndex] << bitLen;
-					fskDataFlag = 2;	//change the flag to receive 1s
+					fskData10B[dataByteIndex] = fskData10B[dataByteIndex] << dataBitCnt;
+					fskDataFlag = 2;
 				}
 				else
 				{
-					dataBitCnt = dataBitCnt - 10;
-					fskData10B[dataByteIndex] = fskData10B[dataByteIndex] << (bitLen - dataBitCnt);
-//					fskData8B[dataByteIndex] = bitsDecode(fskData10B[dataByteIndex]);
-//					fskData10B[dataByteIndex] = 0;
-					dataByteIndex++;
-					oneByteReceived = 1;
-					if(dataByteIndex < dataLength)
-					{
-						fskData10B[dataByteIndex] = fskData10B[dataByteIndex] << dataBitCnt;
-						fskDataFlag = 2;
-//						if(dataByteIndex == 2)
-//						{
-//							fskData8B[0] = bitsDecode(fskData10B[0]);
-//							fskData8B[1] = bitsDecode(fskData10B[1]);
-//							dataLength = ((fskData8B[0] << 4) & 0xF0)|(fskData8B[1] & 0x0F);
-//							parityBit = (fskData8B[1] << 4) | 0;
-//						}
-
-					}
-					else
-					{
-						for(int i = 0; i < dataLength; i++)
-						{
-							fskData8B[i] = bitsDecode(fskData10B[i]);
-//							fskData10B[i] = 0;
-						}
-						fskAddress[0] = fskData8B[2];
-						fskAddress[1] = fskData8B[3];
-						fskCrc16[0] = fskData8B[dataLength - 2];
-						fskCrc16[1] = fskData8B[dataLength - 1];
-						fskDataFlag = 0;
-						dataByteIndex = 0;
-						dataLength = 40;
-					}
+					fskDataFlag = 0;
 				}
 			}
 		}
+	}
 
 	else
 	{
+		//get the counter of timer and calculator the bit lang
 		pwmCh2Cnt = HAL_TIM_ReadCapturedValue(&htim8, TIM_CHANNEL_2);
 		bitLen = (pwmCh2Cnt + 30) / ONE_BIT_LENGTH;
-
 		fskBuffer = ~(~(fskBuffer) << bitLen);
-		if(fskDataFlag == 2)
-		{
 
+		//ready to receive 1s
+		if (fskDataFlag == 2)
+		{
 			dataBitCnt = dataBitCnt + bitLen;
 
 			//receive the data Length Bytes
-				if( dataBitCnt <= 10)
+			if (dataBitCnt <= 10)
+			{
+				fskData10B[dataByteIndex] = ~(~(fskData10B[dataByteIndex]) << bitLen);
+				fskDataFlag = 1;	//change the flag to receive 1s
+			}
+			else
+			{
+				//add the last couple of bits to the last Byte
+				dataBitCnt = dataBitCnt - 10;
+				fskData10B[dataByteIndex] = ~(~(fskData10B[dataByteIndex]) << (bitLen - dataBitCnt));
+				oneByteReceived = 1;
+				dataByteIndex++;
+
+				//receive next byte
+				if (dataByteIndex < dataLength)
 				{
-					fskData10B[dataByteIndex] =~(~(fskData10B[dataByteIndex]) << bitLen);
-					fskDataFlag = 1;	//change the flag to receive 1s
+					fskData10B[dataByteIndex] = ~(~(fskData10B[dataByteIndex]) << dataBitCnt);
+					fskDataFlag = 1; 	// change the flag to receive 1s
 				}
 				else
 				{
-					dataBitCnt = dataBitCnt - 10;
-					fskData10B[dataByteIndex] = ~(~(fskData10B[dataByteIndex]) << (bitLen - dataBitCnt));
-//					fskData8B[dataByteIndex] = bitsDecode(fskData10B[dataByteIndex]);
-//					fskData10B[dataByteIndex] = 0;
-					dataByteIndex++;
-					oneByteReceived = 1;
-					if(dataByteIndex < dataLength)
-					{
-						fskData10B[dataByteIndex] = ~(~(fskData10B[dataByteIndex]) << dataBitCnt);
-						fskDataFlag = 1;
-//						if(dataByteIndex == 2)
-//						{
-//							fskData8B[0] = bitsDecode(fskData10B[0]);
-//							fskData8B[1] = bitsDecode(fskData10B[1]);
-//							dataLength = ((fskData8B[0] << 4) & 0xF0)|(fskData8B[1] & 0x0F);
-//							parityBit = (fskData8B[1] << 4) | 0;
-//						}
-					}
-					else
-					{
-						for(int i = 0; i < dataLength; i++)
-						{
-							fskData8B[i] = bitsDecode(fskData10B[i]);
-//							fskData10B[i] = 0;
-						}
-						fskAddress[0] = fskData8B[2];
-						fskAddress[1] = fskData8B[3];
-						fskCrc16[0] = fskData8B[dataLength - 2];
-						fskCrc16[1] = fskData8B[dataLength - 1];
-						fskDataFlag = 0;
-						dataByteIndex = 0;
-						dataLength = 40;
-					}
+//					fskAddress[0] = fskData8B[2];
+//					fskAddress[1] = fskData8B[3];
+//					fskCrc16[0] = fskData8B[dataLength - 2];
+//					fskCrc16[1] = fskData8B[dataLength - 1];
+					fskDataFlag = 0;
 				}
+			}
 		}
 
 		//check the preamble and the Sync-Word
 		else
 		{
+			//check the preamble
 			if (fskBuffer == 0x5555555555555555)
 			{
 				fskPreambleFlag++;
 			}
+
+			//check the Sync Word
 			else if (fskPreambleFlag > 15 && fskBuffer == 0x555555555555550F)
 			{
 				fskSyncFlag++;
 				fskPreambleFlag = 0;
 			}
-			else if ( fskSyncFlag == 1)
+			else if (fskSyncFlag == 1)
 			{
-				if( bitLen >= 4)
+				if (bitLen >= 4)
 				{
-					fskDataFlag = 1;
+					fskDataFlag = 1;	//set the data Flag and ready to receive data
 					fskSyncFlag = 0;
+
+					// the 1s not blong to sync Word, belong to the first Byte of Data
 					dataBitCnt = bitLen - 4;
 					fskData10B[0] = ~((~fskData10B[0]) << dataBitCnt);
 				}
@@ -282,11 +267,8 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) {
 			{
 				fskPreambleFlag = 0;
 				fskSyncFlag = 0;
-	//				fskDataFlag = 0;
 			}
-
 		}
-
 	}
 
 }
@@ -339,23 +321,42 @@ int main(void)
   HAL_TIM_PWM_Start_IT(&htim8,TIM_CHANNEL_1);
   HAL_TIM_PWM_Start_IT(&htim8,TIM_CHANNEL_2);
 
-//  while (dataReceived == 0)
-//  {
-//	 if(dataByteIndex == 2){
-//		 fskData8B[0] = bitsDecode(fskData10B[0]);
-//		 fskData8B[1] = bitsDecode(fskData10B[1]);
-//		 dataLength = ((fskData8B[0] << 4) & 0xF0)|(fskData8B[1] & 0x0F);
-//		 parityBit = (fskData8B[1] << 4) | 0;
-//		 }
-//	 else if (dataByteIndex == dataLength)
-//	 {
-//		 for (int i = 2; i < dataLength; i++)
-//		 {
-//			 fskData8B[i] = bitsDecode(fskData10B[i]);
-//		 }
-//		 dataReceived = 1;
-//	 }
-//  };
+	while (1)
+	{
+		//decode the 10bits data to 8bits data
+		if (oneByteReceived == 1)
+		{
+			//calculate the data Length and parity bit
+			if (dataByteIndex == 2)
+			{
+				fskData8B[0] = bitsDecode(fskData10B[0]);
+				fskData8B[1] = bitsDecode(fskData10B[1]);
+				dataLength = ((fskData8B[0] << 4) & 0xF0) | (fskData8B[1] & 0x0F);
+				parityBit = (fskData8B[1] << 4) | 0;
+			}
+
+			//data was received and reset all flags
+			if (dataByteIndex == dataLength)
+			{
+				for (int i = 0; i < dataLength; i++)
+				{
+					fskData8B[i] = bitsDecode(fskData10B[i]);
+					fskData10B[i] = 0;
+				}
+
+				//Address Bytes and CRC16 Bytes
+				fskAddress[0] = fskData8B[2];
+				fskAddress[1] = fskData8B[3];
+				fskCrc16[0] = fskData8B[dataLength - 2];
+				fskCrc16[1] = fskData8B[dataLength - 1];
+
+				dataByteIndex = 0;
+				dataLength = 256;;
+				dataReceived = 1;
+			}
+			oneByteReceived = 0;
+		}
+	};
 
   rs232_menu();
 

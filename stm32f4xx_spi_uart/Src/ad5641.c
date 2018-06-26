@@ -6,14 +6,17 @@ extern SPI_HandleTypeDef hspi3;
 
 uint16_t spi3DataTx = DAC_START;
 
-void dacInit(void){
+void dacInit(void)
+{
 	Spi3DacTran();
 	uartPrintDacValue(spi3DataTx);
 }
 
-void dacAddition(void){
+void dacAddition(void)
+{
 	spi3DataTx = spi3DataTx + 1;
-	if(spi3DataTx > DAC_MAX){
+	if (spi3DataTx > DAC_MAX)
+	{
 		uartPrintString("out of range!\n\r");
 		spi3DataTx = spi3DataTx - 1;
 	}
@@ -21,9 +24,11 @@ void dacAddition(void){
 	uartPrintDacValue(spi3DataTx);
 }
 
-void dacSubtraction(void){
+void dacSubtraction(void)
+{
 	spi3DataTx = spi3DataTx - 1;
-	if (spi3DataTx < DAC_MIN || spi3DataTx > DAC_MAX) {
+	if (spi3DataTx < DAC_MIN || spi3DataTx > DAC_MAX)
+	{
 		uartPrintString("out of range!\n\r");
 		spi3DataTx = spi3DataTx + 1;
 	}
@@ -31,9 +36,11 @@ void dacSubtraction(void){
 	uartPrintDacValue(spi3DataTx);
 }
 
-void dacMultiplication(void){
+void dacMultiplication(void)
+{
 	spi3DataTx = spi3DataTx * 2;
-	if (spi3DataTx > DAC_MAX) {
+	if (spi3DataTx > DAC_MAX)
+	{
 		uartPrintString("out of range!\n\r");
 		spi3DataTx = spi3DataTx / 2;
 	}
@@ -41,15 +48,18 @@ void dacMultiplication(void){
 	uartPrintDacValue(spi3DataTx);
 }
 
-void dacDivision(void){
+void dacDivision(void)
+{
 	spi3DataTx = spi3DataTx / 2;
 	Spi3DacTran();
 	uartPrintDacValue(spi3DataTx);
 }
 
-void turnDacUp(void){
+void turnDacUp(void)
+{
 	spi3DataTx = spi3DataTx + 20;
-	if(spi3DataTx > DAC_MAX){
+	if (spi3DataTx > DAC_MAX)
+	{
 		uartPrintString("out of range!\n\r");
 		spi3DataTx = spi3DataTx - 20;
 	}
@@ -57,9 +67,11 @@ void turnDacUp(void){
 //	uartPrintDacValue(spi3DataTx);
 }
 
-void turnDacDown(void){
+void turnDacDown(void)
+{
 	spi3DataTx = spi3DataTx - 20;
-	if(spi3DataTx > DAC_MAX){
+	if (spi3DataTx > DAC_MAX)
+	{
 		uartPrintString("out of range!\n\r");
 		spi3DataTx = spi3DataTx + 20;
 	}
@@ -67,8 +79,9 @@ void turnDacDown(void){
 //	uartPrintDacValue(spi3DataTx);
 }
 
-void Spi3DacTran(void){
+void Spi3DacTran(void)
+{
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
-	HAL_SPI_Transmit(&hspi3, (uint8_t *)&spi3DataTx, 1, 5000);
+	HAL_SPI_Transmit(&hspi3, (uint8_t *) &spi3DataTx, 1, 5000);
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
 }

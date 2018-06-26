@@ -3,6 +3,6 @@
 
 #include "stm32f4xx_hal.h"
 
-uint8_t bitsDecode (uint16_t data);
+uint16_t bitsDecode (uint16_t data);
 
 #endif
