@@ -1,0 +1,30 @@
+Removed Pin From Net: NetName=PB_7 Pin=U1-59
+Removed Pin From Net: NetName=PB_8 Pin=U1-61
+Added Component: Designator=C63(0402RN)
+Added Component: Designator=C64(0402RN)
+Added Component: Designator=L1(0603R)
+Added Component: Designator=U4(BMI160)
+Added Pin To Net: NetName=GND Pin=C63-2
+Added Pin To Net: NetName=GND Pin=C64-2
+Added Pin To Net: NetName=3V3_MUC Pin=L1-1
+Added Pin To Net: NetName=GND Pin=U4-6
+Added Pin To Net: NetName=GND Pin=U4-7
+Added Pin To Net: NetName=3V3MUC Pin=C63-1
+Added Pin To Net: NetName=3V3MUC Pin=C64-1
+Added Pin To Net: NetName=3V3MUC Pin=L1-2
+Added Pin To Net: NetName=3V3MUC Pin=U4-1
+Added Pin To Net: NetName=3V3MUC Pin=U4-5
+Added Pin To Net: NetName=3V3MUC Pin=U4-8
+Added Pin To Net: NetName=3V3MUC Pin=U4-12
+Added Net: Name=3V3MUC
+Added Pin To Net: NetName=I2C1_SCL Pin=U1-61
+Added Pin To Net: NetName=I2C1_SCL Pin=U4-13
+Added Net: Name=I2C1_SCL
+Added Pin To Net: NetName=I2C1_SDA Pin=U1-59
+Added Pin To Net: NetName=I2C1_SDA Pin=U4-14
+Added Net: Name=I2C1_SDA
+Added Member To Class: ClassName=U_muC Member=Component C63 100nF
+Added Member To Class: ClassName=U_muC Member=Component C64 100nF
+Added Member To Class: ClassName=U_FSK_Receiver Member=Component C103 4uF7/16V
+Added Member To Class: ClassName=U_muC Member=Component L1 15 Ohm @ 100MHz
+Added Member To Class: ClassName=U_muC Member=Component U4 BMI160

@@ -1,0 +1,8 @@
+Added Component: Designator=R80(0402RN)
+Added Component: Designator=R81(0402RN)
+Added Pin To Net: NetName=3V3MUC Pin=R80-1
+Added Pin To Net: NetName=I2C1_SCL Pin=R80-2
+Added Pin To Net: NetName=3V3MUC Pin=R81-1
+Added Pin To Net: NetName=I2C1_SDA Pin=R81-2
+Added Member To Class: ClassName=U_muC Member=Component R80 4k7
+Added Member To Class: ClassName=U_muC Member=Component R81 4k7

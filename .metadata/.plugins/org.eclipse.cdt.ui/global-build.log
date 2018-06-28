@@ -541,3 +541,410 @@ arm-none-eabi-size "stm32f4xx_spi_uart.elf"
    text	   data	    bss	    dec	    hex	filename
   16400	    120	   3216	  19736	   4d18	stm32f4xx_spi_uart.elf
  
+12:32:59 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16392	    120	   3216	  19728	   4d10	stm32f4xx_spi_uart.elf
+ 
+12:33:51 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16400	    120	   3216	  19736	   4d18	stm32f4xx_spi_uart.elf
+ 
+14:06:30 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16328	    412	   3216	  19956	   4df4	stm32f4xx_spi_uart.elf
+ 
+14:06:52 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16268	    412	   3216	  19896	   4db8	stm32f4xx_spi_uart.elf
+ 
+13:58:08 **** Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16340	    120	   3216	  19676	   4cdc	stm32f4xx_spi_uart.elf
+ 
+14:02:18 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16336	    120	   2960	  19416	   4bd8	stm32f4xx_spi_uart.elf
+ 
+14:18:33 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+make: Nothing to be done for 'all'.
+14:31:37 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16332	    120	   2960	  19412	   4bd4	stm32f4xx_spi_uart.elf
+ 
+14:31:55 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+make: Nothing to be done for 'all'.
+14:33:27 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16336	    120	   2960	  19416	   4bd8	stm32f4xx_spi_uart.elf
+ 
+14:47:46 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16336	    120	   2960	  19416	   4bd8	stm32f4xx_spi_uart.elf
+ 
+14:48:45 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16336	    120	   2960	  19416	   4bd8	stm32f4xx_spi_uart.elf
+ 
+15:06:48 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+../Src/main.c: In function 'main':
+../Src/main.c:320:9: error: 'datareceived' undeclared (first use in this function)
+  while (datareceived == 0)
+         ^~~~~~~~~~~~
+../Src/main.c:320:9: note: each undeclared identifier is reported only once for each function it appears in
+Src/subdir.mk:51: recipe for target 'Src/main.o' failed
+make: *** [Src/main.o] Error 1
+15:07:13 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  18276	    412	   2960	  21648	   5490	stm32f4xx_spi_uart.elf
+ 
+15:29:34 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/adf4159.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adf4159.d" -MT"Src/adf4159.o" -o "Src/adf4159.o" "../Src/adf4159.c"
+../Src/adf4159.c:14:16: warning: 'parityBit' initialized and declared 'extern'
+ extern uint8_t parityBit = 0;
+                ^~~~~~~~~
+../Src/adf4159.c:15:16: warning: 'fskAddress' initialized and declared 'extern'
+ extern uint8_t fskAddress[2] = {0, 0};
+                ^~~~~~~~~~
+../Src/adf4159.c:16:16: warning: 'fskCrc16' initialized and declared 'extern'
+ extern uint8_t fskCrc16 [2] = {0, 0};
+                ^~~~~~~~
+../Src/adf4159.c: In function 'adf4159Init':
+../Src/adf4159.c:67:20: warning: implicit declaration of function 'bitsDecode' [-Wimplicit-function-declaration]
+     fskData8B[0] = bitsDecode(fskData10B[0]);
+                    ^~~~~~~~~~
+Finished building: ../Src/adf4159.c
+ 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Src/main.o:(.bss+0x3c): multiple definition of `fskCrc16'
+Src/adf4159.o:(.bss+0x8): first defined here
+Src/main.o:(.bss+0x40): multiple definition of `fskAddress'
+Src/adf4159.o:(.bss+0x4): first defined here
+Src/main.o:(.bss+0x42): multiple definition of `parityBit'
+Src/adf4159.o:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+makefile:35: recipe for target 'stm32f4xx_spi_uart.elf' failed
+make: *** [stm32f4xx_spi_uart.elf] Error 1
+15:30:05 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/adf4159.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adf4159.d" -MT"Src/adf4159.o" -o "Src/adf4159.o" "../Src/adf4159.c"
+../Src/adf4159.c:14:16: warning: 'parityBit' initialized and declared 'extern'
+ extern uint8_t parityBit = 0;
+                ^~~~~~~~~
+../Src/adf4159.c:16:16: warning: 'fskCrc16' initialized and declared 'extern'
+ extern uint8_t fskCrc16 [2] = {0, 0};
+                ^~~~~~~~
+../Src/adf4159.c: In function 'adf4159Init':
+../Src/adf4159.c:67:20: warning: implicit declaration of function 'bitsDecode' [-Wimplicit-function-declaration]
+     fskData8B[0] = bitsDecode(fskData10B[0]);
+                    ^~~~~~~~~~
+../Src/adf4159.c:83:5: error: 'fskAddress' undeclared (first use in this function)
+     fskAddress[0] = fskData8B[2];
+     ^~~~~~~~~~
+../Src/adf4159.c:83:5: note: each undeclared identifier is reported only once for each function it appears in
+Src/subdir.mk:51: recipe for target 'Src/adf4159.o' failed
+make: *** [Src/adf4159.o] Error 1
+15:30:40 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/adf4159.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adf4159.d" -MT"Src/adf4159.o" -o "Src/adf4159.o" "../Src/adf4159.c"
+../Src/adf4159.c: In function 'adf4159Init':
+../Src/adf4159.c:67:20: warning: implicit declaration of function 'bitsDecode' [-Wimplicit-function-declaration]
+     fskData8B[0] = bitsDecode(fskData10B[0]);
+                    ^~~~~~~~~~
+Finished building: ../Src/adf4159.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  18276	    412	   2960	  21648	   5490	stm32f4xx_spi_uart.elf
+ 
+15:31:53 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  18336	    412	   2960	  21708	   54cc	stm32f4xx_spi_uart.elf
+ 
+15:32:02 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+make: Nothing to be done for 'all'.
+15:33:43 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  18336	    412	   2960	  21708	   54cc	stm32f4xx_spi_uart.elf
+ 
+15:37:14 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  18336	    412	   2960	  21708	   54cc	stm32f4xx_spi_uart.elf
+ 
+15:38:38 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+make all 
+Building file: ../Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
+Finished building: ../Src/main.c
+ 
+Building target: stm32f4xx_spi_uart.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F446RETx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_spi_uart.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_spi_uart.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
+arm-none-eabi-size "stm32f4xx_spi_uart.elf"
+   text	   data	    bss	    dec	    hex	filename
+  18336	    412	   2960	  21708	   54cc	stm32f4xx_spi_uart.elf
+ 

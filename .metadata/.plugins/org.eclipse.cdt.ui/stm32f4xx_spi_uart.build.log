@@ -1,56 +1,10 @@
-12:24:37 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
+15:38:38 **** Incremental Build of configuration Debug for project stm32f4xx_spi_uart ****
 make all 
-Building file: ../Src/ad5641.c
-Invoking: MCU GCC Compiler
-C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/ad5641.d" -MT"Src/ad5641.o" -o "Src/ad5641.o" "../Src/ad5641.c"
-Finished building: ../Src/ad5641.c
- 
-Building file: ../Src/adf4159.c
-Invoking: MCU GCC Compiler
-C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/adf4159.d" -MT"Src/adf4159.o" -o "Src/adf4159.o" "../Src/adf4159.c"
-Finished building: ../Src/adf4159.c
- 
-Building file: ../Src/bgt24mtr11.c
-Invoking: MCU GCC Compiler
-C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/bgt24mtr11.d" -MT"Src/bgt24mtr11.o" -o "Src/bgt24mtr11.o" "../Src/bgt24mtr11.c"
-Finished building: ../Src/bgt24mtr11.c
- 
-Building file: ../Src/bitDecode.c
-Invoking: MCU GCC Compiler
-C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/bitDecode.d" -MT"Src/bitDecode.o" -o "Src/bitDecode.o" "../Src/bitDecode.c"
-Finished building: ../Src/bitDecode.c
- 
 Building file: ../Src/main.c
 Invoking: MCU GCC Compiler
 C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/main.d" -MT"Src/main.o" -o "Src/main.o" "../Src/main.c"
 Finished building: ../Src/main.c
- 
-Building file: ../Src/microsec_delay.c
-Invoking: MCU GCC Compiler
-C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/microsec_delay.d" -MT"Src/microsec_delay.o" -o "Src/microsec_delay.o" "../Src/microsec_delay.c"
-Finished building: ../Src/microsec_delay.c
- 
-Building file: ../Src/rs232_menu.c
-Invoking: MCU GCC Compiler
-C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/rs232_menu.d" -MT"Src/rs232_menu.o" -o "Src/rs232_menu.o" "../Src/rs232_menu.c"
-Finished building: ../Src/rs232_menu.c
- 
-Building file: ../Src/uartPrint.c
-Invoking: MCU GCC Compiler
-C:\Users\min_bao\Documents\Workspace\stm32f4xx_spi_uart\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F446xx -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Drivers/CMSIS/Include" -I"C:/Users/min_bao/Documents/Workspace/stm32f4xx_spi_uart/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Src/uartPrint.d" -MT"Src/uartPrint.o" -o "Src/uartPrint.o" "../Src/uartPrint.c"
-../Src/uartPrint.c: In function 'uartPrintNumber':
-../Src/uartPrint.c:36:44: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
-  uart1BufferLen = sprintf(uart1BufferTx, "%d\n\r", number);
-                                            ^
-Finished building: ../Src/uartPrint.c
  
 Building target: stm32f4xx_spi_uart.elf
 Invoking: MCU GCC Linker
@@ -62,8 +16,8 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "stm32f4xx_spi_uart.elf" "stm32f4xx_spi_uart.bin"
 arm-none-eabi-size "stm32f4xx_spi_uart.elf"
    text	   data	    bss	    dec	    hex	filename
-  16400	    120	   3216	  19736	   4d18	stm32f4xx_spi_uart.elf
+  18336	    412	   2960	  21708	   54cc	stm32f4xx_spi_uart.elf
  
 
-12:24:47 Build Finished (took 9s.475ms)
+15:38:41 Build Finished (took 2s.882ms)
 

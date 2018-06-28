@@ -1,0 +1,4 @@
+Added Component: Designator=J?(WAGO 231-333/001-000)
+Added Component: Designator=X?(SMC_vertical_male_25X2_3.25mm)
+Added Member To Class: ClassName=U_interface Member=Component J? RIA 31220103
+Added Member To Class: ClassName=U_interface Member=Component X? SMC Male PCB 2x25

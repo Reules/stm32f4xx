@@ -1,0 +1,25 @@
+Removed Pin From Net: NetName=IFQ_50 Pin=C90-1
+Removed Pin From Net: NetName=NetC90_2 Pin=C90-2
+Removed Pin From Net: NetName=NetC90_2 Pin=L1-1
+Removed Pin From Net: NetName=NetC90_2 Pin=R62-2
+Removed Pin From Net: NetName=GND Pin=U11-2
+Removed Pin From Net: NetName=COMP_3V3 Pin=U11-5
+Removed Member From Class: ClassName=U_FSK_Receiver Member=C90
+Added Component: Designator=C103(1206R)
+Added Component: Designator=C104(0402RN)
+Added Component: Designator=R101(0402RN)
+Added Pin To Net: NetName=3V3 Pin=C103-1
+Added Pin To Net: NetName=GND Pin=C103-2
+Added Pin To Net: NetName=3V3 Pin=C104-1
+Added Pin To Net: NetName=GND Pin=C104-2
+Added Pin To Net: NetName=IFQ_50 Pin=L1-1
+Added Pin To Net: NetName=IFQ_50 Pin=R62-2
+Added Pin To Net: NetName=GND Pin=R101-1
+Added Pin To Net: NetName=NetC90_2 Pin=R101-2
+Added Pin To Net: NetName=NetC90_2 Pin=U10-12
+Added Pin To Net: NetName=COMP_3V3 Pin=U11-2
+Added Pin To Net: NetName=GND Pin=U11-5
+Change Net Name : Old Net Name=NetC90_2 New Net Name=NetR101_2
+Added Member To Class: ClassName=U_FSK_Receiver Member=Component C103 4uF7/16V
+Added Member To Class: ClassName=U_FSK_Receiver Member=Component C104 10nF
+Added Member To Class: ClassName=U_FSK_Receiver Member=Component R101 4k7

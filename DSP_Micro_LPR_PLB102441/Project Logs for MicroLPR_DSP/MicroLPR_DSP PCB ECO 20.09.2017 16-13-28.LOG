@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=I2C1_SDA Pin=U1-59
+Removed Pin From Net: NetName=PB_9 Pin=U1-62
+Added Pin To Net: NetName=I2C1_SDA Pin=U1-62
+Added Pin To Net: NetName=PB7 Pin=U1-59
+Added Net: Name=PB7

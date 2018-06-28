@@ -5,6 +5,15 @@
 #include "uartPrint.h"
 
 extern SPI_HandleTypeDef hspi1;
+extern uint8_t dataReceived;
+extern uint8_t oneByteReceived;
+extern uint8_t dataByteIndex;
+extern uint16_t dataLength;
+extern uint16_t fskData10B[256];
+extern uint8_t fskData8B[256];
+extern uint8_t parityBit;
+extern uint8_t fskAddress[2];
+extern uint8_t fskCrc16 [2];
 
 extern void MX_SPI1_ADF4159_Init(void);
 
@@ -47,6 +56,42 @@ void adf4159Init(void)
 	| (1829L << R0_SHIFT_MSB_FRACTIONAL_VALUE));//Fraction MSB is 1792/1829/1914
 
 	uartPrintString("adf4159 was initialed\n\r");
+	while (dataReceived == 0)
+	{
+		//decode the 10bits data to 8bits data
+		if (oneByteReceived == 1)
+		{
+			//calculate the data Length and parity bit
+			if (dataByteIndex == 2)
+			{
+				fskData8B[0] = bitsDecode(fskData10B[0]);
+				fskData8B[1] = bitsDecode(fskData10B[1]);
+				dataLength = ((fskData8B[0] << 4) & 0xF0) | (fskData8B[1] & 0x0F);
+				parityBit = (fskData8B[1] << 4) | 0;
+			}
+
+			//data was received and reset all flags, data Length plus 2 Bytes CRC
+			if (dataByteIndex == dataLength + 2)
+			{
+				for (int i = 0; i < dataLength; i++)
+				{
+					fskData8B[i] = bitsDecode(fskData10B[i]);
+					fskData10B[i] = 0;
+				}
+
+				//Address Bytes and CRC16 Bytes
+				fskAddress[0] = fskData8B[2];
+				fskAddress[1] = fskData8B[3];
+				fskCrc16[0] = fskData8B[dataLength];
+				fskCrc16[1] = fskData8B[dataLength+1];
+
+				dataByteIndex = 0;
+				dataLength = 256;;
+				dataReceived = 1;
+			}
+			oneByteReceived = 0;
+		}
+	};
 }
 
 void adf4159RampOn(void)

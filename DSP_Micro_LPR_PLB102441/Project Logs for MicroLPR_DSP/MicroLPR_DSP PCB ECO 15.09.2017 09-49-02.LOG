@@ -1,0 +1,3 @@
+Added Member To Class: ClassName=U_power Member=Component C51 SMD capacitor
+Added Member To Class: ClassName=U_FSK_Receiver Member=Component C59 10pF
+Added Member To Class: ClassName=U_muC Member=Component U1 stm32f446re

@@ -1,0 +1,4 @@
+Added Component: Designator=R23(0402RN)
+Added Pin To Net: NetName=PB_7 Pin=R23-1
+Added Pin To Net: NetName=NetLED1_1 Pin=R23-2
+Added Member To Class: ClassName=U_muC Member=Component R23 330R

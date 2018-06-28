@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<item value="../Inc" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
 	<item value="561" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_x"/>
-	<item value="219" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_y"/>
+	<item value="134" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_y"/>
 	<item value="0" key="org.eclipse.cdt.uiformatter_page.white_space_tab_page.node"/>
 	<item value="1117" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_width"/>
 	<item value="876" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_height"/>

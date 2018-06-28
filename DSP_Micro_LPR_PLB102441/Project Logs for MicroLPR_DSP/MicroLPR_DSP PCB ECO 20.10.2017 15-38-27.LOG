@@ -1,0 +1,11 @@
+Added Component: Designator=JTAG?(SHF-105-01-L-D-TH)
+Added Pin To Net: NetName=3V3_SPI Pin=JTAG?-1
+Added Pin To Net: NetName=JTAG_TMS Pin=JTAG?-2
+Added Pin To Net: NetName=GND Pin=JTAG?-3
+Added Pin To Net: NetName=JTAG_TCK Pin=JTAG?-4
+Added Pin To Net: NetName=GND Pin=JTAG?-5
+Added Pin To Net: NetName=JTAG_TDO Pin=JTAG?-6
+Added Pin To Net: NetName=JTAG_TDI Pin=JTAG?-8
+Added Pin To Net: NetName=GND Pin=JTAG?-9
+Added Pin To Net: NetName=NSRST Pin=JTAG?-10
+Added Member To Class: ClassName=U_USB Member=Component JTAG? SHF-105-01-L-D-TH
