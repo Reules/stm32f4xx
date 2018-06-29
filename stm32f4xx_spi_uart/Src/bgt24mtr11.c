@@ -1,3 +1,7 @@
+/*
+ * init the hochfrequency tranceiver and control the Leistung of send signal
+ */
+
 #include "bgt24mtr11.h"
 #include "stm32f4xx_hal.h"
 

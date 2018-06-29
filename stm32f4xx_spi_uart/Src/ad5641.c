@@ -1,3 +1,7 @@
+/*
+ * use the SPI to configure the DAC
+ */
+
 #include "ad5641.h"
 #include "stm32f4xx_hal.h"
 #include "uartPrint.h"

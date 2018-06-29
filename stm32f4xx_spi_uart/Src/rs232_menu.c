@@ -64,13 +64,13 @@ static void mainMenuExcution(const struct rs232_menu *menu)
 		//print enter
 		uartPrintEnter();
 
-		HAL_UART_Receive_IT(&huart1, (uint8_t *) &uart1DataRx, 1); //active the uart1 to accept interrupt
+		HAL_UART_Receive_IT(&huart1, (uint8_t *) &uart1DataRx, 1); 	//active the uart1 to accept interrupt
 		while (!uart1TxCplt)
 		{
-		};					//stop the program until the interrupt is accepted
+		};															//stop the program until the interrupt is accepted
 
-		optionSelect = uart1DataRx - '0';			//convert the char to int
-		uart1TxCplt = 0;					//reset transfer complete variable
+		optionSelect = uart1DataRx - '0';							//convert the char to int
+		uart1TxCplt = 0;											//reset transfer complete variable
 
 		switch (optionSelect)
 		{
@@ -103,13 +103,13 @@ static void ad5641MenuExcution(const struct rs232_menu *menu)
 
 		do
 		{
-			HAL_UART_Receive_IT(&huart1, (uint8_t *) &uart1DataRx, 1); //active the uart1 to accept interrupt
+			HAL_UART_Receive_IT(&huart1, (uint8_t *) &uart1DataRx, 1); 	//active the uart1 to accept interrupt
 			while (!uart1TxCplt)
 			{
-			};				//stop the program until the interrupt is accepted
+			};															//stop the program until the interrupt is accepted
 
-			optionSelect = uart1DataRx - '0';		//convert the char to int
-			uart1TxCplt = 0;				//reset transfer complete variable
+			optionSelect = uart1DataRx - '0';							//convert the char to int
+			uart1TxCplt = 0;											//reset transfer complete variable
 
 			switch (optionSelect)
 			{
@@ -134,10 +134,8 @@ static void ad5641MenuExcution(const struct rs232_menu *menu)
 
 static void hfBoardMenuExcution(const struct rs232_menu *menu)
 {
-	bgt24Init();//initial the spi interface of bgt24mtr11, 64k prescaler disabled
+	bgt24Init();														//initial the spi interface of bgt24mtr11, 64k prescaler disabled
 	adf4159Init();
-//	  HAL_TIM_IC_Start_IT(&htim8,TIM_CHANNEL_1);
-//	  HAL_TIM_IC_Start_IT(&htim8,TIM_CHANNEL_2);
 
 	do
 	{
@@ -153,12 +151,12 @@ static void hfBoardMenuExcution(const struct rs232_menu *menu)
 
 		do
 		{
-			HAL_UART_Receive_IT(&huart1, (uint8_t *) &uart1DataRx, 1); //active the uart1 to accept interrupt
+			HAL_UART_Receive_IT(&huart1, (uint8_t *) &uart1DataRx, 1); 	//active the uart1 to accept interrupt
 			while (!uart1TxCplt)
 			{
-			};				//stop the program until the interrupt is accepted
+			};															//stop the program until the interrupt is accepted
 
-			optionSelect = uart1DataRx - '0';		//convert the char to int
+			optionSelect = uart1DataRx - '0';							//convert the char to int
 			uart1TxCplt = 0;
 			switch (optionSelect)
 			{

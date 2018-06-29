@@ -1,3 +1,7 @@
+/*
+ * 10 bits to 8 bits decode  with lookuptable
+ */
+
 #include "bitDecode.h"
 #include "stm32f4xx_hal.h"
 

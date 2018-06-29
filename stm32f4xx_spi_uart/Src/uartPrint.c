@@ -1,3 +1,6 @@
+/*
+ * redirection printf to uart
+ */
 #include "stm32f4xx_hal.h"
 #include "uartPrint.h"
 
